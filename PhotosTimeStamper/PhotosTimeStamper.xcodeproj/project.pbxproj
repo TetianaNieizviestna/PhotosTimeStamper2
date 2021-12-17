@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71BE54270B8F713341A74DEA /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */; };
+		940EB9AD6B4038A015F5C14D /* Pods_PhotosTimeStamper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */; };
+		949E235EF03824D679E520DE /* Pods_PhotosTimeStamperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */; };
 		AB0BC381276C7869002941F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC380276C7869002941F5 /* AppDelegate.swift */; };
 		AB0BC383276C7869002941F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC382276C7869002941F5 /* SceneDelegate.swift */; };
 		AB0BC385276C7869002941F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC384276C7869002941F5 /* ViewController.swift */; };
@@ -36,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2754B9B28439982512F3713A /* Pods-PhotosTimeStamper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper/Pods-PhotosTimeStamper.release.xcconfig"; sourceTree = "<group>"; };
+		343A16F054783A1415AEE071 /* Pods-PhotosTimeStamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper/Pods-PhotosTimeStamper.debug.xcconfig"; sourceTree = "<group>"; };
+		3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7301A924AE5F895615764FC0 /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper-PhotosTimeStamperUITests/Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		78679271F938E41A3A49ACFF /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper-PhotosTimeStamperUITests/Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig"; sourceTree = "<group>"; };
+		81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62FFECF200DB6824CAE4F0C /* Pods-PhotosTimeStamperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0BC37D276C7869002941F5 /* PhotosTimeStamper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosTimeStamper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BC380276C7869002941F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB0BC382276C7869002941F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		AB0BC39D276C786A002941F5 /* PhotosTimeStamperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosTimeStamperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BC3A1276C786A002941F5 /* PhotosTimeStamperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTimeStamperUITests.swift; sourceTree = "<group>"; };
 		AB0BC3A3276C786A002941F5 /* PhotosTimeStamperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTimeStamperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940EB9AD6B4038A015F5C14D /* Pods_PhotosTimeStamper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949E235EF03824D679E520DE /* Pods_PhotosTimeStamperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BE54270B8F713341A74DEA /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BF5C3D2EC4E40AB1C81C554 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				343A16F054783A1415AEE071 /* Pods-PhotosTimeStamper.debug.xcconfig */,
+				2754B9B28439982512F3713A /* Pods-PhotosTimeStamper.release.xcconfig */,
+				7301A924AE5F895615764FC0 /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig */,
+				78679271F938E41A3A49ACFF /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig */,
+				B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */,
+				A62FFECF200DB6824CAE4F0C /* Pods-PhotosTimeStamperTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		635E79156E20D7AA1B823588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */,
+				81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */,
+				DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB0BC374276C7869002941F5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				AB0BC396276C786A002941F5 /* PhotosTimeStamperTests */,
 				AB0BC3A0276C786A002941F5 /* PhotosTimeStamperUITests */,
 				AB0BC37E276C7869002941F5 /* Products */,
+				5BF5C3D2EC4E40AB1C81C554 /* Pods */,
+				635E79156E20D7AA1B823588 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB0BC3A7276C786A002941F5 /* Build configuration list for PBXNativeTarget "PhotosTimeStamper" */;
 			buildPhases = (
+				F6E685ABB28EC4C80DEC1EF1 /* [CP] Check Pods Manifest.lock */,
 				AB0BC379276C7869002941F5 /* Sources */,
 				AB0BC37A276C7869002941F5 /* Frameworks */,
 				AB0BC37B276C7869002941F5 /* Resources */,
@@ -151,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB0BC3AA276C786A002941F5 /* Build configuration list for PBXNativeTarget "PhotosTimeStamperTests" */;
 			buildPhases = (
+				5831D4B672D35128CA05484D /* [CP] Check Pods Manifest.lock */,
 				AB0BC38F276C786A002941F5 /* Sources */,
 				AB0BC390276C786A002941F5 /* Frameworks */,
 				AB0BC391276C786A002941F5 /* Resources */,
@@ -169,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB0BC3AD276C786A002941F5 /* Build configuration list for PBXNativeTarget "PhotosTimeStamperUITests" */;
 			buildPhases = (
+				C516050F00961403B5E4A326 /* [CP] Check Pods Manifest.lock */,
 				AB0BC399276C786A002941F5 /* Sources */,
 				AB0BC39A276C786A002941F5 /* Frameworks */,
 				AB0BC39B276C786A002941F5 /* Resources */,
@@ -252,6 +296,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5831D4B672D35128CA05484D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosTimeStamperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C516050F00961403B5E4A326 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosTimeStamper-PhotosTimeStamperUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6E685ABB28EC4C80DEC1EF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosTimeStamper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB0BC379276C7869002941F5 /* Sources */ = {
@@ -434,6 +547,7 @@
 		};
 		AB0BC3A8276C786A002941F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 343A16F054783A1415AEE071 /* Pods-PhotosTimeStamper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +576,7 @@
 		};
 		AB0BC3A9276C786A002941F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2754B9B28439982512F3713A /* Pods-PhotosTimeStamper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +605,7 @@
 		};
 		AB0BC3AB276C786A002941F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +626,7 @@
 		};
 		AB0BC3AC276C786A002941F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62FFECF200DB6824CAE4F0C /* Pods-PhotosTimeStamperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +647,7 @@
 		};
 		AB0BC3AE276C786A002941F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7301A924AE5F895615764FC0 /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +666,7 @@
 		};
 		AB0BC3AF276C786A002941F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78679271F938E41A3A49ACFF /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
