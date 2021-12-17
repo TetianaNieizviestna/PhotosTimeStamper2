@@ -1,6 +1,0 @@
-module Pods_PhotosTimeStamper_PhotosTimeStamperUITests {
-  umbrella header "Pods-PhotosTimeStamper-PhotosTimeStamperUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
