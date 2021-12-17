@@ -271,13 +271,13 @@
 		AB0BC3D4276D0634002941F5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				AB0BC3DA276D0634002941F5 /* News */,
-				AB0BC3DF276D0634002941F5 /* ArticleDetails */,
+				AB0BC3DA276D0634002941F5 /* List */,
+				AB0BC3DF276D0634002941F5 /* EditPhoto */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		AB0BC3DA276D0634002941F5 /* News */ = {
+		AB0BC3DA276D0634002941F5 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				AB0BC3DB276D0634002941F5 /* ImageListViewController.swift */,
@@ -285,10 +285,10 @@
 				AB0BC3DD276D0634002941F5 /* ImageListCoordinator.swift */,
 				AB0BC3DE276D0634002941F5 /* ImageList.storyboard */,
 			);
-			path = News;
+			path = List;
 			sourceTree = "<group>";
 		};
-		AB0BC3DF276D0634002941F5 /* ArticleDetails */ = {
+		AB0BC3DF276D0634002941F5 /* EditPhoto */ = {
 			isa = PBXGroup;
 			children = (
 				AB0BC3E0276D0634002941F5 /* EditPhoto.storyboard */,
@@ -296,7 +296,7 @@
 				AB0BC3E2276D0634002941F5 /* EditPhotoViewController.swift */,
 				AB0BC3E3276D0634002941F5 /* EditPhotoViewModel.swift */,
 			);
-			path = ArticleDetails;
+			path = EditPhoto;
 			sourceTree = "<group>";
 		};
 		AB0BC3E4276D0634002941F5 /* Models */ = {
