@@ -7,18 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71BE54270B8F713341A74DEA /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */; };
-		940EB9AD6B4038A015F5C14D /* Pods_PhotosTimeStamper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */; };
-		949E235EF03824D679E520DE /* Pods_PhotosTimeStamperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */; };
+		A2391623CCA38FA440DAB958 /* libPods-PhotosTimeStamper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C66944B59582C664BF7CFF /* libPods-PhotosTimeStamper.a */; };
 		AB0BC381276C7869002941F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC380276C7869002941F5 /* AppDelegate.swift */; };
-		AB0BC383276C7869002941F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC382276C7869002941F5 /* SceneDelegate.swift */; };
-		AB0BC385276C7869002941F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC384276C7869002941F5 /* ViewController.swift */; };
-		AB0BC388276C7869002941F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC386276C7869002941F5 /* Main.storyboard */; };
 		AB0BC38A276C786A002941F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC389276C786A002941F5 /* Assets.xcassets */; };
 		AB0BC38D276C786A002941F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC38B276C786A002941F5 /* LaunchScreen.storyboard */; };
 		AB0BC398276C786A002941F5 /* PhotosTimeStamperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC397276C786A002941F5 /* PhotosTimeStamperTests.swift */; };
 		AB0BC3A2276C786A002941F5 /* PhotosTimeStamperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3A1276C786A002941F5 /* PhotosTimeStamperUITests.swift */; };
 		AB0BC3A4276C786A002941F5 /* PhotosTimeStamperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3A3276C786A002941F5 /* PhotosTimeStamperUITestsLaunchTests.swift */; };
+		AB0BC3FC276D0634002941F5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3C3276D0634002941F5 /* AppCoordinator.swift */; };
+		AB0BC3FD276D0634002941F5 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3C5276D0634002941F5 /* TabItem.swift */; };
+		AB0BC3FE276D0634002941F5 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3C6276D0634002941F5 /* TabBarCoordinator.swift */; };
+		AB0BC3FF276D0634002941F5 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3C8276D0634002941F5 /* Defines.swift */; };
+		AB0BC400276D0634002941F5 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3C9276D0634002941F5 /* Style.swift */; };
+		AB0BC402276D0634002941F5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3CC276D0634002941F5 /* Date.swift */; };
+		AB0BC403276D0634002941F5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3CD276D0634002941F5 /* UIView.swift */; };
+		AB0BC404276D0634002941F5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3CE276D0634002941F5 /* Data.swift */; };
+		AB0BC405276D0634002941F5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3CF276D0634002941F5 /* UIViewController+Alert.swift */; };
+		AB0BC406276D0634002941F5 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3D0276D0634002941F5 /* Storyboard.swift */; };
+		AB0BC407276D0634002941F5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3D1276D0634002941F5 /* UITableView.swift */; };
+		AB0BC409276D0634002941F5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3D3276D0634002941F5 /* UIApplication.swift */; };
+		AB0BC40E276D0634002941F5 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3DB276D0634002941F5 /* ImageListViewController.swift */; };
+		AB0BC40F276D0634002941F5 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3DC276D0634002941F5 /* ImageListViewModel.swift */; };
+		AB0BC410276D0634002941F5 /* ImageListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3DD276D0634002941F5 /* ImageListCoordinator.swift */; };
+		AB0BC411276D0634002941F5 /* ImageList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC3DE276D0634002941F5 /* ImageList.storyboard */; };
+		AB0BC412276D0634002941F5 /* EditPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC3E0276D0634002941F5 /* EditPhoto.storyboard */; };
+		AB0BC413276D0634002941F5 /* EditPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3E1276D0634002941F5 /* EditPhotoCoordinator.swift */; };
+		AB0BC414276D0634002941F5 /* EditPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3E2276D0634002941F5 /* EditPhotoViewController.swift */; };
+		AB0BC415276D0634002941F5 /* EditPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3E3276D0634002941F5 /* EditPhotoViewModel.swift */; };
+		AB0BC418276D0634002941F5 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3E8276D0634002941F5 /* Command.swift */; };
+		AB0BC419276D0634002941F5 /* StampedImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0BC3EB276D0634002941F5 /* StampedImageTableViewCell.xib */; };
+		AB0BC41A276D0634002941F5 /* StampedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3EC276D0634002941F5 /* StampedImageTableViewCell.swift */; };
+		AB0BC424276D0634002941F5 /* ServiceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3FA276D0634002941F5 /* ServiceHolder.swift */; };
+		AB0BC425276D0634002941F5 /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */; };
+		AB0BC427276D1C0E002941F5 /* StampedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC426276D1C0E002941F5 /* StampedImageModel.swift */; };
+		AB0BC42B276D2F0A002941F5 /* CacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */; };
+		AB0BC42F276D367E002941F5 /* UIImagePicker+Permissons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */; };
+		AB0BC431276D3F4B002941F5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC430276D3F4B002941F5 /* UIImage.swift */; };
+		B2044CDE9DA0F1ADA6F7B985 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C45F222731469F0232252 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a */; };
+		B5280BAAA5B26B1886D7483F /* libPods-PhotosTimeStamperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D7B12C9AF9CF098B7963D /* libPods-PhotosTimeStamperTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046C45F222731469F0232252 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		113D7B12C9AF9CF098B7963D /* libPods-PhotosTimeStamperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosTimeStamperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2754B9B28439982512F3713A /* Pods-PhotosTimeStamper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper/Pods-PhotosTimeStamper.release.xcconfig"; sourceTree = "<group>"; };
 		343A16F054783A1415AEE071 /* Pods-PhotosTimeStamper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper/Pods-PhotosTimeStamper.debug.xcconfig"; sourceTree = "<group>"; };
-		3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C66944B59582C664BF7CFF /* libPods-PhotosTimeStamper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotosTimeStamper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7301A924AE5F895615764FC0 /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper-PhotosTimeStamperUITests/Pods-PhotosTimeStamper-PhotosTimeStamperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		78679271F938E41A3A49ACFF /* Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamper-PhotosTimeStamperUITests/Pods-PhotosTimeStamper-PhotosTimeStamperUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62FFECF200DB6824CAE4F0C /* Pods-PhotosTimeStamperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0BC37D276C7869002941F5 /* PhotosTimeStamper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosTimeStamper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BC380276C7869002941F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB0BC382276C7869002941F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB0BC384276C7869002941F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB0BC387276C7869002941F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB0BC389276C786A002941F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB0BC38C276C786A002941F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB0BC38E276C786A002941F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,8 +83,36 @@
 		AB0BC39D276C786A002941F5 /* PhotosTimeStamperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosTimeStamperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0BC3A1276C786A002941F5 /* PhotosTimeStamperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTimeStamperUITests.swift; sourceTree = "<group>"; };
 		AB0BC3A3276C786A002941F5 /* PhotosTimeStamperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTimeStamperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB0BC3C3276D0634002941F5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AB0BC3C5276D0634002941F5 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		AB0BC3C6276D0634002941F5 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		AB0BC3C8276D0634002941F5 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		AB0BC3C9276D0634002941F5 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		AB0BC3CC276D0634002941F5 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		AB0BC3CD276D0634002941F5 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		AB0BC3CE276D0634002941F5 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AB0BC3CF276D0634002941F5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		AB0BC3D0276D0634002941F5 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		AB0BC3D1276D0634002941F5 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		AB0BC3D3276D0634002941F5 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		AB0BC3DB276D0634002941F5 /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		AB0BC3DC276D0634002941F5 /* ImageListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
+		AB0BC3DD276D0634002941F5 /* ImageListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCoordinator.swift; sourceTree = "<group>"; };
+		AB0BC3DE276D0634002941F5 /* ImageList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageList.storyboard; sourceTree = "<group>"; };
+		AB0BC3E0276D0634002941F5 /* EditPhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditPhoto.storyboard; sourceTree = "<group>"; };
+		AB0BC3E1276D0634002941F5 /* EditPhotoCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoCoordinator.swift; sourceTree = "<group>"; };
+		AB0BC3E2276D0634002941F5 /* EditPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoViewController.swift; sourceTree = "<group>"; };
+		AB0BC3E3276D0634002941F5 /* EditPhotoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPhotoViewModel.swift; sourceTree = "<group>"; };
+		AB0BC3E8276D0634002941F5 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		AB0BC3EB276D0634002941F5 /* StampedImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StampedImageTableViewCell.xib; sourceTree = "<group>"; };
+		AB0BC3EC276D0634002941F5 /* StampedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampedImageTableViewCell.swift; sourceTree = "<group>"; };
+		AB0BC3FA276D0634002941F5 /* ServiceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHolder.swift; sourceTree = "<group>"; };
+		AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
+		AB0BC426276D1C0E002941F5 /* StampedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampedImageModel.swift; sourceTree = "<group>"; };
+		AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHelper.swift; sourceTree = "<group>"; };
+		AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePicker+Permissons.swift"; sourceTree = "<group>"; };
+		AB0BC430276D3F4B002941F5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosTimeStamperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				940EB9AD6B4038A015F5C14D /* Pods_PhotosTimeStamper.framework in Frameworks */,
+				A2391623CCA38FA440DAB958 /* libPods-PhotosTimeStamper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				949E235EF03824D679E520DE /* Pods_PhotosTimeStamperTests.framework in Frameworks */,
+				B5280BAAA5B26B1886D7483F /* libPods-PhotosTimeStamperTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71BE54270B8F713341A74DEA /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework in Frameworks */,
+				B2044CDE9DA0F1ADA6F7B985 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,16 +153,15 @@
 				B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */,
 				A62FFECF200DB6824CAE4F0C /* Pods-PhotosTimeStamperTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		635E79156E20D7AA1B823588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DB60F8074E42FAA28DF3CD0 /* Pods_PhotosTimeStamper.framework */,
-				81D1865F001CBD55C40A0F96 /* Pods_PhotosTimeStamper_PhotosTimeStamperUITests.framework */,
-				DFC4C37EF360544532ECC5CB /* Pods_PhotosTimeStamperTests.framework */,
+				69C66944B59582C664BF7CFF /* libPods-PhotosTimeStamper.a */,
+				046C45F222731469F0232252 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a */,
+				113D7B12C9AF9CF098B7963D /* libPods-PhotosTimeStamperTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,9 +192,14 @@
 			isa = PBXGroup;
 			children = (
 				AB0BC380276C7869002941F5 /* AppDelegate.swift */,
-				AB0BC382276C7869002941F5 /* SceneDelegate.swift */,
-				AB0BC384276C7869002941F5 /* ViewController.swift */,
-				AB0BC386276C7869002941F5 /* Main.storyboard */,
+				AB0BC3E7276D0634002941F5 /* Abstractions */,
+				AB0BC3E9276D0634002941F5 /* CustomUI */,
+				AB0BC3CB276D0634002941F5 /* Extensions */,
+				AB0BC3C7276D0634002941F5 /* Helpers */,
+				AB0BC3E4276D0634002941F5 /* Models */,
+				AB0BC3C2276D0634002941F5 /* Navigation */,
+				AB0BC3D4276D0634002941F5 /* Screens */,
+				AB0BC3ED276D0634002941F5 /* Services */,
 				AB0BC389276C786A002941F5 /* Assets.xcassets */,
 				AB0BC38B276C786A002941F5 /* LaunchScreen.storyboard */,
 				AB0BC38E276C786A002941F5 /* Info.plist */,
@@ -166,6 +222,123 @@
 				AB0BC3A3276C786A002941F5 /* PhotosTimeStamperUITestsLaunchTests.swift */,
 			);
 			path = PhotosTimeStamperUITests;
+			sourceTree = "<group>";
+		};
+		AB0BC3C2276D0634002941F5 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3C3276D0634002941F5 /* AppCoordinator.swift */,
+				AB0BC3C4276D0634002941F5 /* TabBar */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		AB0BC3C4276D0634002941F5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3C5276D0634002941F5 /* TabItem.swift */,
+				AB0BC3C6276D0634002941F5 /* TabBarCoordinator.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AB0BC3C7276D0634002941F5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3C8276D0634002941F5 /* Defines.swift */,
+				AB0BC3C9276D0634002941F5 /* Style.swift */,
+				AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AB0BC3CB276D0634002941F5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3CC276D0634002941F5 /* Date.swift */,
+				AB0BC3CD276D0634002941F5 /* UIView.swift */,
+				AB0BC3CE276D0634002941F5 /* Data.swift */,
+				AB0BC3CF276D0634002941F5 /* UIViewController+Alert.swift */,
+				AB0BC3D0276D0634002941F5 /* Storyboard.swift */,
+				AB0BC3D1276D0634002941F5 /* UITableView.swift */,
+				AB0BC3D3276D0634002941F5 /* UIApplication.swift */,
+				AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */,
+				AB0BC430276D3F4B002941F5 /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB0BC3D4276D0634002941F5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3DA276D0634002941F5 /* News */,
+				AB0BC3DF276D0634002941F5 /* ArticleDetails */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AB0BC3DA276D0634002941F5 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3DB276D0634002941F5 /* ImageListViewController.swift */,
+				AB0BC3DC276D0634002941F5 /* ImageListViewModel.swift */,
+				AB0BC3DD276D0634002941F5 /* ImageListCoordinator.swift */,
+				AB0BC3DE276D0634002941F5 /* ImageList.storyboard */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		AB0BC3DF276D0634002941F5 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3E0276D0634002941F5 /* EditPhoto.storyboard */,
+				AB0BC3E1276D0634002941F5 /* EditPhotoCoordinator.swift */,
+				AB0BC3E2276D0634002941F5 /* EditPhotoViewController.swift */,
+				AB0BC3E3276D0634002941F5 /* EditPhotoViewModel.swift */,
+			);
+			path = ArticleDetails;
+			sourceTree = "<group>";
+		};
+		AB0BC3E4276D0634002941F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC426276D1C0E002941F5 /* StampedImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB0BC3E7276D0634002941F5 /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3E8276D0634002941F5 /* Command.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		AB0BC3E9276D0634002941F5 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3EA276D0634002941F5 /* Cells */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		AB0BC3EA276D0634002941F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3EB276D0634002941F5 /* StampedImageTableViewCell.xib */,
+				AB0BC3EC276D0634002941F5 /* StampedImageTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AB0BC3ED276D0634002941F5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BC3FA276D0634002941F5 /* ServiceHolder.swift */,
+				AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +448,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0BC412276D0634002941F5 /* EditPhoto.storyboard in Resources */,
 				AB0BC38D276C786A002941F5 /* LaunchScreen.storyboard in Resources */,
+				AB0BC419276D0634002941F5 /* StampedImageTableViewCell.xib in Resources */,
+				AB0BC411276D0634002941F5 /* ImageList.storyboard in Resources */,
 				AB0BC38A276C786A002941F5 /* Assets.xcassets in Resources */,
-				AB0BC388276C7869002941F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,9 +546,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0BC385276C7869002941F5 /* ViewController.swift in Sources */,
+				AB0BC409276D0634002941F5 /* UIApplication.swift in Sources */,
+				AB0BC403276D0634002941F5 /* UIView.swift in Sources */,
+				AB0BC40E276D0634002941F5 /* ImageListViewController.swift in Sources */,
+				AB0BC41A276D0634002941F5 /* StampedImageTableViewCell.swift in Sources */,
+				AB0BC40F276D0634002941F5 /* ImageListViewModel.swift in Sources */,
+				AB0BC3FC276D0634002941F5 /* AppCoordinator.swift in Sources */,
+				AB0BC431276D3F4B002941F5 /* UIImage.swift in Sources */,
+				AB0BC42B276D2F0A002941F5 /* CacheHelper.swift in Sources */,
+				AB0BC427276D1C0E002941F5 /* StampedImageModel.swift in Sources */,
+				AB0BC415276D0634002941F5 /* EditPhotoViewModel.swift in Sources */,
+				AB0BC425276D0634002941F5 /* ImageStorageService.swift in Sources */,
+				AB0BC413276D0634002941F5 /* EditPhotoCoordinator.swift in Sources */,
+				AB0BC405276D0634002941F5 /* UIViewController+Alert.swift in Sources */,
+				AB0BC418276D0634002941F5 /* Command.swift in Sources */,
+				AB0BC406276D0634002941F5 /* Storyboard.swift in Sources */,
+				AB0BC3FF276D0634002941F5 /* Defines.swift in Sources */,
+				AB0BC404276D0634002941F5 /* Data.swift in Sources */,
+				AB0BC414276D0634002941F5 /* EditPhotoViewController.swift in Sources */,
+				AB0BC3FD276D0634002941F5 /* TabItem.swift in Sources */,
+				AB0BC3FE276D0634002941F5 /* TabBarCoordinator.swift in Sources */,
+				AB0BC400276D0634002941F5 /* Style.swift in Sources */,
+				AB0BC424276D0634002941F5 /* ServiceHolder.swift in Sources */,
+				AB0BC410276D0634002941F5 /* ImageListCoordinator.swift in Sources */,
+				AB0BC402276D0634002941F5 /* Date.swift in Sources */,
 				AB0BC381276C7869002941F5 /* AppDelegate.swift in Sources */,
-				AB0BC383276C7869002941F5 /* SceneDelegate.swift in Sources */,
+				AB0BC42F276D367E002941F5 /* UIImagePicker+Permissons.swift in Sources */,
+				AB0BC407276D0634002941F5 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +609,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AB0BC386276C7869002941F5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB0BC387276C7869002941F5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB0BC38B276C786A002941F5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -558,7 +749,7 @@
 				INFOPLIST_FILE = PhotosTimeStamper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ImageList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -587,7 +778,7 @@
 				INFOPLIST_FILE = PhotosTimeStamper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ImageList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

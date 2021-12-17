@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MediaMetadataModelData" representedClassName="MediaMetadataModelData" syncable="YES" codeGenerationType="class">
+        <attribute name="format" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="mediaMetadata" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MediaModelData" inverseName="mediaMetadata" inverseEntity="MediaModelData"/>
+    </entity>
+    <entity name="MediaModelData" representedClassName="MediaModelData" syncable="YES" codeGenerationType="class">
+        <attribute name="caption" optional="YES" attributeType="String"/>
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="subtype" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="media" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewsModelData" inverseName="media" inverseEntity="NewsModelData"/>
+        <relationship name="mediaMetadata" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MediaMetadataModelData" inverseName="mediaMetadata" inverseEntity="MediaMetadataModelData"/>
+    </entity>
+    <entity name="NewsModelData" representedClassName="NewsModelData" syncable="YES" codeGenerationType="class">
+        <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="adxKeywords" optional="YES" attributeType="String"/>
+        <attribute name="byline" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nytdsection" optional="YES" attributeType="String"/>
+        <attribute name="publishedDate" optional="YES" attributeType="String"/>
+        <attribute name="section" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="subsection" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MediaModelData" inverseName="media" inverseEntity="MediaModelData"/>
+    </entity>
+    <elements>
+        <element name="MediaMetadataModelData" positionX="65.0458984375" positionY="45.0777587890625" width="128" height="104"/>
+        <element name="MediaModelData" positionX="52.908935546875" positionY="17.88006591796875" width="128" height="119"/>
+        <element name="NewsModelData" positionX="-63" positionY="-18" width="128" height="224"/>
+    </elements>
+</model>

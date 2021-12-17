@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image List View Controller-->
+        <scene sceneID="pFo-eI-iYU">
+            <objects>
+                <viewController storyboardIdentifier="ImageListViewController" id="5n1-NJ-MR8" customClass="ImageListViewController" customModule="PhotosTimeStamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="avp-wY-0uE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDO-BX-Oyb">
+                                <rect key="frame" x="15" y="59" width="384" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ns0-Pa-wSA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-Gz-KET">
+                                <rect key="frame" x="15" y="104" width="384" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooL-Wz-z3d">
+                                <rect key="frame" x="302.5" y="58.5" width="91.5" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.83963482196514427" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add photo">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addPhotoBtnAction:" destination="5n1-NJ-MR8" eventType="touchUpInside" id="Iek-KJ-iQk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R4B-ho-pxa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sHU-Gz-KET" firstAttribute="top" secondItem="XDO-BX-Oyb" secondAttribute="bottom" constant="15" id="5ux-Cu-7In"/>
+                            <constraint firstItem="sHU-Gz-KET" firstAttribute="leading" secondItem="R4B-ho-pxa" secondAttribute="leading" constant="15" id="AbG-UH-eiZ"/>
+                            <constraint firstItem="R4B-ho-pxa" firstAttribute="trailing" secondItem="ooL-Wz-z3d" secondAttribute="trailing" constant="20" id="LP1-gZ-Y6Q"/>
+                            <constraint firstItem="R4B-ho-pxa" firstAttribute="bottom" secondItem="sHU-Gz-KET" secondAttribute="bottom" id="bMi-Gg-0ae"/>
+                            <constraint firstItem="XDO-BX-Oyb" firstAttribute="leading" secondItem="R4B-ho-pxa" secondAttribute="leading" constant="15" id="dFA-mm-sWb"/>
+                            <constraint firstItem="ooL-Wz-z3d" firstAttribute="centerY" secondItem="XDO-BX-Oyb" secondAttribute="centerY" id="fHa-6A-hnW"/>
+                            <constraint firstItem="R4B-ho-pxa" firstAttribute="trailing" secondItem="sHU-Gz-KET" secondAttribute="trailing" constant="15" id="gD6-Ll-Daw"/>
+                            <constraint firstItem="XDO-BX-Oyb" firstAttribute="top" secondItem="R4B-ho-pxa" secondAttribute="top" constant="15" id="oOI-Ga-vlS"/>
+                            <constraint firstItem="R4B-ho-pxa" firstAttribute="trailing" secondItem="XDO-BX-Oyb" secondAttribute="trailing" constant="15" id="qkL-wD-9tk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoBtn" destination="ooL-Wz-z3d" id="ncV-v0-9Yw"/>
+                        <outlet property="tableView" destination="sHU-Gz-KET" id="tdw-T6-eSU"/>
+                        <outlet property="titleLabel" destination="XDO-BX-Oyb" id="S53-BH-18U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orV-fw-RYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

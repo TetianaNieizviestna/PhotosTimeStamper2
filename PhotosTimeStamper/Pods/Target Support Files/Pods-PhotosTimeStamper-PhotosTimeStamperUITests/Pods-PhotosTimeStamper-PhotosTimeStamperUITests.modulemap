@@ -1,4 +1,4 @@
-framework module Pods_PhotosTimeStamper_PhotosTimeStamperUITests {
+module Pods_PhotosTimeStamper_PhotosTimeStamperUITests {
   umbrella header "Pods-PhotosTimeStamper-PhotosTimeStamperUITests-umbrella.h"
 
   export *
