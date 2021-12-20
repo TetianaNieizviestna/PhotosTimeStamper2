@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -179,6 +180,7 @@
                             <constraint firstItem="hwP-v9-iVQ" firstAttribute="top" secondItem="Hhr-rJ-rjo" secondAttribute="top" id="HCG-ln-88o"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="trailing" secondItem="IZa-MU-Buc" secondAttribute="trailing" constant="15" id="KFf-Ev-40p"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" constant="-15" id="O7Q-GT-7or"/>
+                            <constraint firstItem="IZa-MU-Buc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iYg-fR-6MB" secondAttribute="bottom" constant="15" id="fAC-Ev-fak"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="hwP-v9-iVQ" secondAttribute="leading" id="gjO-Ro-BjJ"/>
                             <constraint firstItem="IZa-MU-Buc" firstAttribute="bottom" secondItem="Hhr-rJ-rjo" secondAttribute="bottom" constant="-15" id="kWF-os-DUR"/>
                             <constraint firstItem="iYg-fR-6MB" firstAttribute="top" secondItem="hwP-v9-iVQ" secondAttribute="bottom" constant="15" id="otX-K5-ZkS"/>
