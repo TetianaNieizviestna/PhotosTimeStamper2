@@ -22,24 +22,25 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peV-v7-CiM">
                                         <rect key="frame" x="184.5" y="15" width="45" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVT-eU-EXM">
                                         <rect key="frame" x="15" y="14" width="19.5" height="22"/>
+                                        <color key="tintColor" red="0.80784313725490198" green="0.21568627450980393" blue="0.35686274509803922" alpha="1" colorSpace="deviceRGB"/>
                                         <state key="normal" image="arrow.backward" catalog="system"/>
                                         <connections>
                                             <action selector="backBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="PP6-aE-bvm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-Ws-bdC" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="290.5" y="2.5" width="115.5" height="45"/>
+                                        <rect key="frame" x="310" y="2.5" width="89" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="whC-Kd-hIJ"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="save_list_ic-2" title="Save in list" imagePadding="10" buttonSize="small">
+                                        <buttonConfiguration key="configuration" style="plain" image="save_list_ic-2" title="In List" imagePadding="10" buttonSize="small">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -55,7 +56,7 @@
                                     <constraint firstAttribute="height" constant="50" id="G1D-I0-gM5"/>
                                     <constraint firstItem="peV-v7-CiM" firstAttribute="centerX" secondItem="hwP-v9-iVQ" secondAttribute="centerX" id="KrG-dU-DiU"/>
                                     <constraint firstItem="peV-v7-CiM" firstAttribute="centerY" secondItem="hwP-v9-iVQ" secondAttribute="centerY" id="Lzn-4y-B1e"/>
-                                    <constraint firstAttribute="trailing" secondItem="DTM-Ws-bdC" secondAttribute="trailing" constant="8" id="uv8-e4-F4n"/>
+                                    <constraint firstAttribute="trailing" secondItem="DTM-Ws-bdC" secondAttribute="trailing" constant="15" id="uv8-e4-F4n"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-fR-6MB">
@@ -65,15 +66,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-IJ-pGk">
-                                        <rect key="frame" x="119" y="352" width="250" height="17"/>
+                                        <rect key="frame" x="119" y="352.5" width="250" height="16.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="ujA-En-Sgb"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Date and time stamp">
                                                 <attributes>
-                                                    <color key="NSColor" red="1" green="0.83921568627450982" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <color key="NSColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                                    <font key="NSFont" size="14" name="SFMono-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -209,7 +210,7 @@
             <size key="intrinsicContentSize" width="154.5" height="39"/>
         </designable>
         <designable name="DTM-Ws-bdC">
-            <size key="intrinsicContentSize" width="115.5" height="35"/>
+            <size key="intrinsicContentSize" width="89" height="35"/>
         </designable>
         <designable name="UrP-ci-yhb">
             <size key="intrinsicContentSize" width="96.5" height="39"/>
