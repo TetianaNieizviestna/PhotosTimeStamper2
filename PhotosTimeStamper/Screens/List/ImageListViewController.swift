@@ -1,6 +1,6 @@
 //
 //  NewsViewController.swift
-//  ViVNewsApp
+//  PhotosTimeStamper
 //
 //  Created by Tetiana Nieizviestna on 19.03.2021.
 //
@@ -38,7 +38,7 @@ final class ImageListViewController: UIViewController {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var tableView: UITableView!
     
-    @IBOutlet private var addPhotoBtn: UIButton!
+    @IBOutlet private var addPhotoBtn: GradientButton!
     
     private var refreshControl = UIRefreshControl()
 

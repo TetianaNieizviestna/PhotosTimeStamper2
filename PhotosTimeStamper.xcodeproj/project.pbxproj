@@ -41,8 +41,9 @@
 		AB0BC425276D0634002941F5 /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */; };
 		AB0BC427276D1C0E002941F5 /* StampedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC426276D1C0E002941F5 /* StampedImageModel.swift */; };
 		AB0BC42B276D2F0A002941F5 /* CacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */; };
-		AB0BC42F276D367E002941F5 /* UIImagePicker+Permissons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */; };
+		AB0BC42F276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42E276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift */; };
 		AB0BC431276D3F4B002941F5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC430276D3F4B002941F5 /* UIImage.swift */; };
+		ABA9BD3B277125A600E5DED1 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA9BD3A277125A600E5DED1 /* GradientButton.swift */; };
 		B2044CDE9DA0F1ADA6F7B985 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C45F222731469F0232252 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a */; };
 		B5280BAAA5B26B1886D7483F /* libPods-PhotosTimeStamperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D7B12C9AF9CF098B7963D /* libPods-PhotosTimeStamperTests.a */; };
 /* End PBXBuildFile section */
@@ -110,8 +111,9 @@
 		AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
 		AB0BC426276D1C0E002941F5 /* StampedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampedImageModel.swift; sourceTree = "<group>"; };
 		AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHelper.swift; sourceTree = "<group>"; };
-		AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePicker+Permissons.swift"; sourceTree = "<group>"; };
+		AB0BC42E276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIImagePicker+Permissons.swift"; sourceTree = "<group>"; };
 		AB0BC430276D3F4B002941F5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		ABA9BD3A277125A600E5DED1 /* GradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,7 +264,7 @@
 				AB0BC3D0276D0634002941F5 /* Storyboard.swift */,
 				AB0BC3D1276D0634002941F5 /* UITableView.swift */,
 				AB0BC3D3276D0634002941F5 /* UIApplication.swift */,
-				AB0BC42E276D367E002941F5 /* UIImagePicker+Permissons.swift */,
+				AB0BC42E276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift */,
 				AB0BC430276D3F4B002941F5 /* UIImage.swift */,
 			);
 			path = Extensions;
@@ -318,6 +320,7 @@
 		AB0BC3E9276D0634002941F5 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				ABA9BD3A277125A600E5DED1 /* GradientButton.swift */,
 				AB0BC3EA276D0634002941F5 /* Cells */,
 			);
 			path = CustomUI;
@@ -567,11 +570,12 @@
 				AB0BC3FD276D0634002941F5 /* TabItem.swift in Sources */,
 				AB0BC3FE276D0634002941F5 /* TabBarCoordinator.swift in Sources */,
 				AB0BC400276D0634002941F5 /* Style.swift in Sources */,
+				ABA9BD3B277125A600E5DED1 /* GradientButton.swift in Sources */,
 				AB0BC424276D0634002941F5 /* ServiceHolder.swift in Sources */,
 				AB0BC410276D0634002941F5 /* ImageListCoordinator.swift in Sources */,
 				AB0BC402276D0634002941F5 /* Date.swift in Sources */,
 				AB0BC381276C7869002941F5 /* AppDelegate.swift in Sources */,
-				AB0BC42F276D367E002941F5 /* UIImagePicker+Permissons.swift in Sources */,
+				AB0BC42F276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift in Sources */,
 				AB0BC407276D0634002941F5 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

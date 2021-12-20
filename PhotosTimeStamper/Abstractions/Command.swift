@@ -1,6 +1,6 @@
 //
 //  Command.swift
-//  ViVNewsApp
+//  PhotosTimeStamper
 //
 //  Created by Tetiana Nieizviestna on 20.03.2021.
 //

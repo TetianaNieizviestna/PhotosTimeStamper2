@@ -8,29 +8,28 @@
 import UIKit
 import Photos
 
-final class Permissions {
-    
-    static func checkAllowsLibrary(target: UIViewController, imagePicker: UIImagePickerController) {
+extension UIViewController {
+    func checkPermissionsLibrary(okBlock: (() -> Void)?) {
         let status = PHPhotoLibrary.authorizationStatus()
         switch (status) {
         case .authorized:
-            target.present(imagePicker, animated: true, completion: nil)
+            okBlock?()
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { (authStatus) in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     if authStatus == .authorized {
-                        target.present(imagePicker, animated: true, completion: nil)
+                        okBlock?()
                     } else {
-                        showLibraryAccessDeniedAlert(target: target)
+                        self?.showLibraryAccessDeniedAlert()
                     }
                 }
             }
         case .denied:
-            showLibraryAccessDeniedAlert(target: target)
+            showLibraryAccessDeniedAlert()
         case .restricted:
             let okOption = AlertOption(title: "OK", action: .nop)
             
-            target.showAlertWithOptions(
+            showAlertWithOptions(
                 title: "Restricted",
                 message: "You've been restricted from using the photo library on this device. Without camera access this feature won't work. Please contact the device owner so they can give you access.",
                 options: [okOption]
@@ -40,29 +39,28 @@ final class Permissions {
         }
     }
     
-    static func checkAllowsCamera(target: UIViewController, imagePicker: UIImagePickerController) {
+    func checkPermissionsCamera(okBlock: (() -> Void)?) {
         let status: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         
         switch (status) {
         case .authorized:
-            target.present(imagePicker, animated: true, completion: nil)
-            
+            okBlock?()
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { (granted) in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     if (granted) {
-                        target.present(imagePicker, animated: true, completion: nil)
+                        okBlock?()
                     } else {
-                        self.showCamAccessDeniedAlert(target: target)
+                        self?.showCamAccessDeniedAlert()
                     }
                 }
             }
         case .denied:
-            showCamAccessDeniedAlert(target: target)
+            showCamAccessDeniedAlert()
         case .restricted:
             let okOption = AlertOption(title: "OK", action: .nop)
             
-            target.showAlertWithOptions(
+            showAlertWithOptions(
                 title: "Restricted",
                 message: "You've been restricted from using the camera on this device. Without camera access this feature won't work. Please contact the device owner so they can give you access.",
                 options: [okOption]
@@ -73,7 +71,7 @@ final class Permissions {
         }
     }
     
-    static func showCamAccessDeniedAlert(target: UIViewController) {
+    func showCamAccessDeniedAlert() {
         var message = "It looks like your privacy settings are preventing us from accessing your camera. You can fix this by doing the following:\n\n1. Close PhotosTimeStamper app.\n2. Open the Settings app.\n3. Scroll to the bottom and select PhotosTimeStamper in the list.\n4. Turn the Camera on.\n5. Open PhotosTimeStamper and try again"
 
         var alertOptions: [AlertOption] = []
@@ -90,7 +88,7 @@ final class Permissions {
             alertOptions.append(cancelOption)
         }
         alertOptions.append(okOption)
-        target.showAlertWithOptions(
+        showAlertWithOptions(
             title: "",
             message: message,
             options: alertOptions
@@ -98,7 +96,7 @@ final class Permissions {
 
     }
     
-    static func showLibraryAccessDeniedAlert(target: UIViewController) {
+    func showLibraryAccessDeniedAlert() {
         var message = "It looks like your privacy settings are preventing us from accessing your photo library. Press Settings to open settings or cancel to close this message."
         
         var alertOptions: [AlertOption] = []
@@ -115,7 +113,7 @@ final class Permissions {
             alertOptions.append(cancelOption)
         }
         alertOptions.append(okOption)
-        target.showAlertWithOptions(
+        showAlertWithOptions(
             title: "",
             message: message,
             options: alertOptions

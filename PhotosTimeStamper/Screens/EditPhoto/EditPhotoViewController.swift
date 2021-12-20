@@ -1,6 +1,6 @@
 //
 //  ArticleDetailsViewController.swift
-//  ViVNewsApp
+//  PhotosTimeStamper
 //
 //  Created by Tetiana Nieizviestna on 21.03.2021.
 //
@@ -51,12 +51,12 @@ final class EditPhotoViewController: UIViewController {
     @IBOutlet private var saveInListBtn: UIButton!
     @IBOutlet private var photoImageView: UIImageView!
     @IBOutlet private var stampLabel: UILabel!
-    @IBOutlet private var cameraBtn: UIButton!
-    @IBOutlet private var galleryBtn: UIButton!
-    @IBOutlet private var showDataBtn: UIButton!
-    @IBOutlet private var saveInGalleryBtn: UIButton!
-    @IBOutlet private var shareBtn: UIButton!
-    @IBOutlet private var printBtn: UIButton!
+    @IBOutlet private var cameraBtn: GradientButton!
+    @IBOutlet private var galleryBtn: GradientButton!
+    @IBOutlet private var showDataBtn: GradientButton!
+    @IBOutlet private var saveInGalleryBtn: GradientButton!
+    @IBOutlet private var shareBtn: GradientButton!
+    @IBOutlet private var printBtn: GradientButton!
     
     
     @IBOutlet private var ratioConstraint: NSLayoutConstraint!
@@ -143,13 +143,23 @@ final class EditPhotoViewController: UIViewController {
     }
     
     @IBAction private func cameraBtnAction(_ sender: UIButton) {
+#if targetEnvironment(simulator)
+        showAlert(title: "Info", message: "You are using simulator. Native camera crashes it.")
+#else
         imagePicker.sourceType = .camera
-        Permissions.checkAllowsCamera(target: self, imagePicker: imagePicker)
+        checkAllowsCamera() { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+#endif
     }
     
     @IBAction private func galleryBtnAction(_ sender: UIButton) {
         imagePicker.sourceType = .photoLibrary
-        Permissions.checkAllowsLibrary(target: self, imagePicker: imagePicker)
+        checkPermissionsLibrary() { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
     }
     
     @IBAction private func showDataBtnAction(_ sender: UIButton) {

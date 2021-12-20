@@ -1,6 +1,6 @@
 //
 //  TabBarCoordinator.swift
-//  ViVNewsApp
+//  PhotosTimeStamper
 //
 //  Created by Tetiana Nieizviestna on 19.03.2021.
 //

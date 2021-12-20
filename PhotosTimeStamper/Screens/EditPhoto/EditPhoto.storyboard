@@ -33,9 +33,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-Ws-bdC">
-                                        <rect key="frame" x="313" y="-0.5" width="93" height="31"/>
+                                        <rect key="frame" x="263" y="-17" width="143" height="64"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save in list"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="save_list_ic-2" title="Save in list"/>
                                         <connections>
                                             <action selector="saveInListBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="5ih-m5-WBq"/>
                                         </connections>
@@ -89,57 +89,57 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-MU-Buc">
-                                <rect key="frame" x="0.0" y="707" width="414" height="155"/>
+                                <rect key="frame" x="0.0" y="542" width="414" height="320"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-hY-Y4v" userLabel="Take Photo">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-hY-Y4v" userLabel="Take Photo" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="64"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Camera"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="camera_ic" title="Camera"/>
                                                 <connections>
                                                     <action selector="cameraBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="Kzg-Tk-fFm"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC3-1y-pac">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="31"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC3-1y-pac" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="64"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Gallery"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="gallery_ic" title="Gallery"/>
                                                 <connections>
                                                     <action selector="galleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="SNv-jU-L9Y"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-aR-AXl">
-                                        <rect key="frame" x="0.0" y="31" width="414" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-aR-AXl" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="64"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Show/Hide Meta Data"/>
                                         <connections>
                                             <action selector="showDataBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="1gL-3R-jcc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="414" height="64"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save In Gallery"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="save_gallery_ic" title="Save In Gallery"/>
                                         <connections>
                                             <action selector="saveInGalleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="utq-ZO-DSH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb">
-                                        <rect key="frame" x="0.0" y="93" width="414" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="192" width="414" height="64"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="share_ic" title="Share"/>
                                         <connections>
                                             <action selector="shareBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="RR5-h9-7N4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ZF-edt">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ZF-edt" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="256" width="414" height="64"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Print"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="print_ic" title="Print"/>
                                         <connections>
                                             <action selector="printBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="fug-x9-nVX"/>
                                         </connections>
@@ -182,8 +182,34 @@
             <point key="canvasLocation" x="221.73913043478262" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2Z9-Vi-pMP">
+            <size key="intrinsicContentSize" width="169.5" height="64"/>
+        </designable>
+        <designable name="UrP-ci-yhb">
+            <size key="intrinsicContentSize" width="111.5" height="64"/>
+        </designable>
+        <designable name="W5j-aR-AXl">
+            <size key="intrinsicContentSize" width="163.5" height="31"/>
+        </designable>
+        <designable name="YC3-1y-pac">
+            <size key="intrinsicContentSize" width="119.5" height="64"/>
+        </designable>
+        <designable name="sRv-ZF-edt">
+            <size key="intrinsicContentSize" width="104.5" height="64"/>
+        </designable>
+        <designable name="wIS-hY-Y4v">
+            <size key="intrinsicContentSize" width="124.5" height="64"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="camera_ic" width="50" height="50"/>
+        <image name="gallery_ic" width="50" height="50"/>
+        <image name="print_ic" width="50" height="50"/>
+        <image name="save_gallery_ic" width="50" height="50"/>
+        <image name="save_list_ic-2" width="50" height="50"/>
+        <image name="share_ic" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
