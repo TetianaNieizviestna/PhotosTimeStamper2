@@ -14,7 +14,7 @@ struct StampedImageModel {
     let image: UIImage?
     let stamp: String
     
-    static let initial: StampedImageModel = .init(id: "", title: "", image: UIImage(), stamp: "")
+    static let initial: StampedImageModel = .init(id: "", title: "", image: nil, stamp: "")
 
     func toCachedData() -> CachedStampedImage? {
         if let data = image?.jpegData(compressionQuality: 1) {

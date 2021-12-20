@@ -18,15 +18,15 @@ final class EditPhotoCoordinator: EditPhotoCoordinatorType {
     
     private var imageModel: StampedImageModel
     
-    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, imageModel: StampedImageModel) {
+    init(navigationController: UINavigationController?, serviceHolder: ServiceHolder, imageModel: StampedImageModel, isSaved: Bool) {
         self.navigationController = navigationController
         self.navigationController?.navigationBar.isTranslucent = true
         self.serviceHolder = serviceHolder
         self.imageModel = imageModel
-        controller?.viewModel = EditPhotoViewModel(self, serviceHolder: self.serviceHolder, imageModel: imageModel)
+        controller?.viewModel = EditPhotoViewModel(self, serviceHolder: self.serviceHolder, imageModel: imageModel, isSaved: isSaved)
     }
     
-    func start(with delegate: ArticleScreenDelegate?) {
+    func start(with delegate: EditPhotoScreenDelegate?) {
         if let controller = controller {
             controller.modalTransitionStyle = .coverVertical
             controller.modalPresentationStyle = .overFullScreen

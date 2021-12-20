@@ -11,23 +11,26 @@ typealias EditPhotoProps = EditPhotoViewController.Props
 
 protocol EditPhotoViewModelType {
     var didStateChanged: ((EditPhotoProps) -> Void)? { get set }
-    
-    func setImage(_ image: UIImage, path: String)
-    func changeTitle(text: String)
-    func setStamp(text: String)
 }
 
 final class EditPhotoViewModel: EditPhotoViewModelType{
     var didStateChanged: ((EditPhotoProps) -> Void)?
 
     private let coordinator: EditPhotoCoordinatorType
+    private var storageService: ImageStorageServiceType
+
     private var imageId: String
     private var title: String
     private var image: UIImage?
     private var stamp: String
-
-    init(_ coordinator: EditPhotoCoordinatorType, serviceHolder: ServiceHolder, imageModel: StampedImageModel) {
+    
+    private var isSaved = false
+    
+    init(_ coordinator: EditPhotoCoordinatorType, serviceHolder: ServiceHolder, imageModel: StampedImageModel, isSaved: Bool) {
         self.coordinator = coordinator
+        storageService = serviceHolder.get(by: ImageStorageServiceType.self)
+
+        self.isSaved = isSaved
         
         imageId = imageModel.id
         title = imageModel.title
@@ -41,26 +44,41 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
         updateProps()
     }
     
-    func setImage(_ image: UIImage, path: String) {
+    private func setImage(_ image: UIImage, path: String) {
         if imageId.isEmpty {
             imageId = generateId(path: path)
         }
+        isSaved = false
         self.image = image
         updateProps()
     }
     
-    func changeTitle(text: String) {
+    private func changeTitle(text: String) {
+        isSaved = text == title
+        
         title = text
         updateProps()
     }
     
-    func setStamp(text: String) {
-        stamp = text
+    private func setStamp(text: String) {
+        isSaved = self.stamp == text
+        stamp = "DATE: \(text)"
+
         updateProps()
     }
     
     private func generateId(path: String) -> String {
         return "\(path)\(Date().timeIntervalSinceReferenceDate)"
+    }
+    
+    private func saveImageInList() {
+        let imageData = StampedImageModel(
+            id: imageId,
+            title: title,
+            image: image,
+            stamp: stamp
+        )
+        storageService.saveImage(imageData: imageData)
     }
 
     private func updateProps() {
@@ -68,8 +86,19 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
             title: title,
             image: image,
             stamp: stamp,
-            onBack: Command {
-                self.coordinator.dismiss()
+            isSaved: isSaved,
+            onSetTitle: CommandWith { [weak self] text in
+                self?.changeTitle(text: text)
+                self?.saveImageInList()
+            },
+            onSetImage: CommandWith { [weak self] image, path in
+                self?.setImage(image, path: path)
+            },
+            onSetStamp: CommandWith { [weak self] text in
+                self?.setStamp(text: text)
+            },
+            onBack: Command { [weak self] in
+                self?.coordinator.dismiss()
             }
         )
         DispatchQueue.main.async {

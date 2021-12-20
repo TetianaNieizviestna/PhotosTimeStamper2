@@ -14,7 +14,7 @@ class StampedImageTableViewCell: UITableViewCell {
         let onSelect: Command
         
         static let initial: Props = .init(
-            imageData: StampedImageModel.initial,
+            imageData: .initial,
             onSelect: .nop
         )
     }

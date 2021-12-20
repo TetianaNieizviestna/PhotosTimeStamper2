@@ -59,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-IJ-pGk">
-                                        <rect key="frame" x="164" y="397" width="250" height="17"/>
+                                        <rect key="frame" x="149" y="382" width="250" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="ujA-En-Sgb"/>
                                         </constraints>
@@ -80,11 +80,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cAr-dJ-GdJ" secondAttribute="trailing" id="0OL-wU-mYT"/>
-                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" id="5Dn-gK-TD5"/>
+                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" constant="-15" id="5Dn-gK-TD5"/>
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="top" secondItem="iYg-fR-6MB" secondAttribute="top" id="IDP-dW-Uqr"/>
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" id="MAD-fs-gPn"/>
                                     <constraint firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" id="YXf-k6-ou3"/>
-                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="trailing" secondItem="cAr-dJ-GdJ" secondAttribute="trailing" id="q0h-eI-jkj"/>
+                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="trailing" secondItem="cAr-dJ-GdJ" secondAttribute="trailing" constant="-15" id="q0h-eI-jkj"/>
                                     <constraint firstAttribute="height" secondItem="iYg-fR-6MB" secondAttribute="width" multiplier="1:1" id="v9a-vh-JE7"/>
                                 </constraints>
                             </view>
@@ -123,9 +123,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP">
                                         <rect key="frame" x="0.0" y="62" width="414" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save In Gallery"/>
                                         <connections>
-                                            <action selector="saveBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="gON-p4-if6"/>
+                                            <action selector="saveInGalleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="utq-ZO-DSH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb">
@@ -168,6 +168,7 @@
                         <outlet property="galleryBtn" destination="YC3-1y-pac" id="6zN-hq-8uc"/>
                         <outlet property="photoImageView" destination="cAr-dJ-GdJ" id="h4L-qW-4Po"/>
                         <outlet property="printBtn" destination="sRv-ZF-edt" id="cW3-NN-4Et"/>
+                        <outlet property="ratioConstraint" destination="v9a-vh-JE7" id="zZG-93-z5j"/>
                         <outlet property="saveInGalleryBtn" destination="2Z9-Vi-pMP" id="ZRh-1H-avR"/>
                         <outlet property="saveInListBtn" destination="DTM-Ws-bdC" id="pIP-Fo-rqU"/>
                         <outlet property="shareBtn" destination="UrP-ci-yhb" id="SsR-UB-kr8"/>

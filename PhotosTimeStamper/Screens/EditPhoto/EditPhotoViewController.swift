@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreGraphics
+import AVFAudio
 
-protocol ArticleScreenDelegate: AnyObject {
+protocol EditPhotoScreenDelegate: AnyObject {
     func didSaveBtnPressed()
 }
 
@@ -17,13 +18,22 @@ extension EditPhotoViewController {
         let title: String
         let image: UIImage?
         let stamp: String
-
+        let isSaved: Bool
+        
+        let onSetTitle: CommandWith<String>
+        let onSetImage: CommandWith<(UIImage, String)>
+        let onSetStamp: CommandWith<String>
+        
         let onBack: Command
         
         static let initial: Props = .init(
             title: "",
             image: nil,
             stamp: "",
+            isSaved: false,
+            onSetTitle: .nop,
+            onSetImage: .nop,
+            onSetStamp: .nop,
             onBack: .nop
         )
     }
@@ -32,7 +42,7 @@ extension EditPhotoViewController {
 final class EditPhotoViewController: UIViewController {
     var viewModel: EditPhotoViewModelType!
     var props: Props = .initial
-    weak var delegate: ArticleScreenDelegate?
+    weak var delegate: EditPhotoScreenDelegate?
     
     @IBOutlet private var backBtn: UIButton!
     @IBOutlet private var titleLabel: UILabel!
@@ -48,6 +58,9 @@ final class EditPhotoViewController: UIViewController {
     @IBOutlet private var shareBtn: UIButton!
     @IBOutlet private var printBtn: UIButton!
     
+    
+    @IBOutlet private var ratioConstraint: NSLayoutConstraint!
+    
     private var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
@@ -58,6 +71,16 @@ final class EditPhotoViewController: UIViewController {
             self?.render(props)
             self?.delegate?.didSaveBtnPressed()
         }
+    }
+    
+    private func render(_ props: Props) {
+        self.props = props
+        photoImageView.image = props.image
+        
+        fitImageViewSize()
+        
+        stampLabel.text = props.stamp
+        titleLabel.text = titleLabel.text
     }
     
     private func setupUI() {
@@ -74,88 +97,142 @@ final class EditPhotoViewController: UIViewController {
     private func setupButtons() {
 
     }
-    
-    func render(_ props: Props) {
-        self.props = props
-        photoImageView.image = props.image
+
+    private func fitImageViewSize() {
+        guard let image = props.image,
+              image.size.height > 0,
+              image.size.width > 0 else { return }
         
-        fitImageViewSize()
+        let ratio = image.size.width / image.size.height
         
-        stampLabel.text = props.stamp
-        titleLabel.text = titleLabel.text
+        ratioConstraint.constant = ratio
+        
+        view.layoutSubviews()
     }
     
-    private func fitImageViewSize() {
-        if let image = props.image {
-            guard image.size.height > 0,
-                  image.size.width > 0 else { return }
-
-            let ratio = image.size.width / image.size.height
-            if containerView.frame.width > containerView.frame.height {
-                let newHeight = containerView.frame.width / ratio
-                photoImageView.frame.size = CGSize(width: containerView.frame.width, height: newHeight)
-            } else{
-                let newWidth = containerView.frame.height * ratio
-                photoImageView.frame.size = CGSize(width: newWidth, height: containerView.frame.height)
-            }
+    private func showChooseImageAlert() {
+        showAlert(title: "Error", message: "Please choose the image")
+    }
+    
+    private func saveInList(with title: String) {
+        props.onSetTitle.perform(with: title)
+        delegate?.didSaveBtnPressed()
+        props.onBack.perform()
+    }
+    
+    @IBAction private func backBtnAction(_ sender: UIButton) {
+        if props.isSaved {
+            props.onBack.perform()
+        } else {
+            let options = [
+                AlertOption(
+                    title: "No",
+                    action: .nop
+                ),
+                AlertOption(
+                    title: "Yes",
+                    action: props.onBack
+                ),
+            ]
+            showAlertWithOptions(
+                title: "",
+                message: "Photo will not save. Are you sure?",
+                options: options
+            )
         }
     }
     
-    @IBAction func backBtnAction(_ sender: UIButton) {
-        let options = [
-            AlertOption(
-                title: "No",
-                action: .nop
-            ),
-            AlertOption(
-                title: "Yes",
-                action: props.onBack
-            ),
-        ]
-        showAlertWithOptions(
-            title: "",
-            message: "Photo will not save. Are you sure?",
-            options: options
-        )
-    }
-    
-    @IBAction func cameraBtnAction(_ sender: UIButton) {
+    @IBAction private func cameraBtnAction(_ sender: UIButton) {
         imagePicker.sourceType = .camera
         Permissions.checkAllowsCamera(target: self, imagePicker: imagePicker)
     }
     
-    @IBAction func galleryBtnAction(_ sender: UIButton) {
+    @IBAction private func galleryBtnAction(_ sender: UIButton) {
         imagePicker.sourceType = .photoLibrary
         Permissions.checkAllowsLibrary(target: self, imagePicker: imagePicker)
     }
     
-    @IBAction func showDataBtnAction(_ sender: UIButton) {
+    @IBAction private func showDataBtnAction(_ sender: UIButton) {
         stampLabel.isHidden.toggle()
     }
     
-    @IBAction func saveInGalleryBtnAction(_ sender: UIButton) {
-        if let image = props.image {
+    @IBAction private func saveInGalleryBtnAction(_ sender: UIButton) {
+        if props.image != nil,
+           let image = containerView.toImage() {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        } else {
+            showChooseImageAlert()
         }
     }
     
-    @IBAction func shareBtnAction(_ sender: UIButton) {
+    @IBAction private func shareBtnAction(_ sender: UIButton) {
+        guard props.image != nil,
+              let image: UIImage = containerView.toImage() else {
+                  showChooseImageAlert()
+                  return
+              }
         
+        let activityViewController = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: nil
+        )
+        
+        activityViewController.activityItemsConfiguration = [
+        UIActivity.ActivityType.message
+        ] as? UIActivityItemsConfigurationReading
+        
+        activityViewController.excludedActivityTypes = [
+            .postToWeibo,
+            .print,
+            .assignToContact,
+            .saveToCameraRoll,
+            .addToReadingList,
+            .postToFlickr,
+            .postToVimeo,
+            .postToTencentWeibo,
+            .postToFacebook
+        ]
+        
+        activityViewController.isModalInPresentation = true
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
-    @IBAction func printBtnAction(_ sender: UIButton) {
-
-    }
-    
-    @IBAction func saveInListBtnAction(_ sender: UIButton) {
-        if props.title.isEmpty {
-            let onCancel = AlertOptionWithText(title: "Cancel", action: .nop)
-            let onOk = AlertOptionWithText(title: "Save", action: CommandWith { [weak self] text in
-                self?.viewModel.changeTitle(text: text)
-            })
-            showAlertWithOptionsAndInput(title: "", message: "Please enter the photo title", options: [onCancel, onOk])
+    @IBAction private func printBtnAction(_ sender: UIButton) {
+        guard props.image != nil else {
+            showChooseImageAlert()
+            return
         }
-        delegate?.didSaveBtnPressed()
+        
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.outputType = .general
+        printInfo.jobName = "Photo with real date stamp"
+
+        let printController = UIPrintInteractionController.shared
+        printController.printInfo = printInfo
+        printController.printingItem = self.containerView.toImage()
+        printController.present(from: self.view.frame, in: self.view, animated: true, completionHandler: nil)
+    }
+    
+    @IBAction private func saveInListBtnAction(_ sender: UIButton) {
+        if props.title.isEmpty {
+            let onCancel = AlertOptionWithText(
+                title: "Cancel",
+                action: .nop
+            )
+            let onOk = AlertOptionWithText(
+                title: "Save",
+                action: CommandWith { [weak self] text in
+                    self?.saveInList(with: text)
+                }
+            )
+            showAlertWithOptionsAndInput(
+                title: "",
+                message: "Please enter the photo title",
+                options: [onCancel, onOk]
+            )
+        } else {
+            saveInList(with: props.title)
+        }
     }
 
     deinit {
@@ -174,13 +251,16 @@ extension EditPhotoViewController: UIImagePickerControllerDelegate, UINavigation
            let imagePath = info[.imageURL] as? URL,
            let fixedImage = pickedImage.fixedOrientation() {
 
-            viewModel.setImage(fixedImage, path: imagePath.absoluteString)
-
+            props.onSetImage.perform(with: (fixedImage, imagePath.absoluteString))
+            
             if let imageSource = CGImageSourceCreateWithURL(imagePath as CFURL, nil),
                let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary?,
                let exifDict = imageProperties[kCGImagePropertyExifDictionary],
                let dateTimeOriginal = exifDict[kCGImagePropertyExifDateTimeOriginal] {
-                viewModel.setStamp(text: "DATE: \(String(describing: dateTimeOriginal))")
+
+                if let stamp = dateTimeOriginal as? String {
+                    props.onSetStamp.perform(with: stamp)
+                }
             }
         }
         dismiss(animated: true, completion: nil)
@@ -196,5 +276,4 @@ extension EditPhotoViewController: UIImagePickerControllerDelegate, UINavigation
             showAlertWithOptions(title: "Saved!", message: "Your image has been saved to your photos.", options: [onOk])
         }
     }
-    
 }

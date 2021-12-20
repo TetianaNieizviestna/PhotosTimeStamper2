@@ -17,10 +17,17 @@ extension ImageListViewController {
             case failed(String)
         }
         
+        let onAddPhoto: Command
         let onRefresh: Command
         
         let items: [StampedImageTableViewCell.Props]
-        static let initial: Props = .init(state: .initial, onRefresh: .nop, items: [])
+        
+        static let initial: Props = .init(
+            state: .initial,
+            onAddPhoto: .nop,
+            onRefresh: .nop,
+            items: []
+        )
     }
 }
 
@@ -33,7 +40,7 @@ final class ImageListViewController: UIViewController {
     
     @IBOutlet private var addPhotoBtn: UIButton!
     
-    var refreshControl = UIRefreshControl()
+    private var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,30 +51,12 @@ final class ImageListViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.refresh()
-    }
-    
-    private func setupUI() {
-        setupTableView()
-    }
-
-    private func setupTableView() {
-        tableView.setDataSource(self, delegate: self)
-        tableView.register([StampedImageTableViewCell.identifier])
-        tableView.tableFooterView = UIView(frame: .zero)
-
-        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl)
-    }
-    
-    @objc func refresh(_ sender: AnyObject) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         props.onRefresh.perform()
     }
     
-    func render(_ props: Props) {
+    private func render(_ props: Props) {
         self.props = props
 
         switch props.state {
@@ -86,8 +75,27 @@ final class ImageListViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    private func setupUI() {
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        tableView.setDataSource(self, delegate: self)
+        tableView.register([StampedImageTableViewCell.identifier])
+        tableView.tableFooterView = UIView(frame: .zero)
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc
+    private func refresh(_ sender: AnyObject) {
+        props.onRefresh.perform()
+    }
+    
     @IBAction func addPhotoBtnAction(_ sender: UIButton) {
-        viewModel.addNewPhotoScreen()
+        props.onAddPhoto.perform()
     }
 }
 
@@ -109,8 +117,8 @@ extension ImageListViewController: UITableViewDataSource {
     }
 }
 
-extension ImageListViewController: ArticleScreenDelegate {
+extension ImageListViewController: EditPhotoScreenDelegate {
     func didSaveBtnPressed() {
-        self.props.onRefresh.perform()
+        props.onRefresh.perform()
     }
 }

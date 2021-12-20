@@ -45,12 +45,14 @@ class CacheHelper {
     }
     
     func addImage(_ stampedImage: StampedImageModel) {
+        guard let data = stampedImage.toCachedData() else { return }
         var products = getImagesData()
-        if !products.contains(where: { $0.id == stampedImage.id}) {
-            if let data = stampedImage.toCachedData() {
-                products.append(data)
-            }
+        if let firstIndex = products.firstIndex(where: { $0.id == stampedImage.id}) {
+            products[firstIndex] = data
+        } else {
+            products.append(data)
         }
+        
         CacheHelper.shared.saveData(key: Keys.cachedStampedImages, object: products)
     }
     

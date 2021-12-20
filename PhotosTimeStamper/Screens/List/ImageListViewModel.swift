@@ -11,9 +11,6 @@ typealias ImageListProps = ImageListViewController.Props
 
 protocol ImageListViewModelType {
     var didStateChanged: ((ImageListProps) -> Void)? { get set }
-    
-    func refresh()
-    func addNewPhotoScreen()
 }
 
 final class ImageListViewModel: ImageListViewModelType {
@@ -44,7 +41,7 @@ final class ImageListViewModel: ImageListViewModelType {
         setScreenState(.loaded)
     }
     
-    func refresh() {
+    private func refresh() {
         loadImages()
     }
 
@@ -55,26 +52,31 @@ final class ImageListViewModel: ImageListViewModelType {
     private func createCellProps(_ imageModel: StampedImageModel) -> StampedImageTableViewCell.Props {
         return .init(
             imageData: imageModel,
-            onSelect: Command {
-                self.coordinator.onImageDetails(imageModel: imageModel)
+            onSelect: Command { [weak self] in
+                self?.coordinator.onImageDetails(
+                    imageModel: imageModel,
+                    isSaved: true
+                )
             }
         )
     }
     
-    func updateProps() {
+    private func updateProps() {
         let props = ImageListProps(
             state: self.screenState,
-            onRefresh: Command {
-                self.refresh()
+            onAddPhoto: Command { [weak self] in
+                self?.coordinator.onImageDetails(
+                    imageModel: .initial,
+                    isSaved: false
+                )
             },
-            items: self.createItems()
+            onRefresh: Command { [weak self] in
+                self?.refresh()
+            },
+            items: createItems()
         )
         DispatchQueue.main.async {
             self.didStateChanged?(props)
         }
-    }
-    
-    func addNewPhotoScreen() {
-        coordinator.onImageDetails(imageModel: StampedImageModel.initial)
     }
 }
