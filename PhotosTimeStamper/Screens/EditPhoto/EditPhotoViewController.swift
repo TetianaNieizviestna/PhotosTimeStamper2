@@ -162,7 +162,7 @@ final class EditPhotoViewController: UIViewController {
         showAlert(title: "Info", message: "You are using simulator. Native camera crashes it.")
 #else
         imagePicker.sourceType = .camera
-        checkAllowsCamera() { [weak self] in
+        checkPermissionsCamera() { [weak self] in
             guard let self = self else { return }
             self.present(self.imagePicker, animated: true, completion: nil)
         }
