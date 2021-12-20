@@ -42,3 +42,19 @@ public class GradientButton: UIButton {
         updateColors()
     }
 }
+
+extension UIButton {
+    func setImageForAllStates(_ image: UIImage?) {
+        setImage(image, for: .highlighted)
+        setImage(image, for: .focused)
+        setImage(image, for: .normal)
+        setImage(image, for: .selected)
+    }
+    
+    func setTitleForAllStates(_ text: String) {
+        setTitle(text, for: .highlighted)
+        setTitle(text, for: .focused)
+        setTitle(text, for: .normal)
+        setTitle(text, for: .selected)
+    }
+}

@@ -48,7 +48,7 @@ final class EditPhotoViewController: UIViewController {
     @IBOutlet private var titleLabel: UILabel!
     
     @IBOutlet private var containerView: UIView!
-    @IBOutlet private var saveInListBtn: UIButton!
+    @IBOutlet private var saveInListBtn: GradientButton!
     @IBOutlet private var photoImageView: UIImageView!
     @IBOutlet private var stampLabel: UILabel!
     @IBOutlet private var cameraBtn: GradientButton!
@@ -81,21 +81,26 @@ final class EditPhotoViewController: UIViewController {
         
         stampLabel.text = props.stamp
         titleLabel.text = titleLabel.text
+        updateShowDataBtn()
     }
     
     private func setupUI() {
         configureImagePicker()
-        setupButtons()
+        setupButtons([
+            saveInListBtn,
+            cameraBtn,
+            galleryBtn,
+            showDataBtn,
+            saveInGalleryBtn,
+            shareBtn,
+            printBtn
+        ])
     }
 
     private func configureImagePicker() {
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.mediaTypes = ["public.image"]
-    }
-
-    private func setupButtons() {
-
     }
 
     private func fitImageViewSize() {
@@ -118,6 +123,16 @@ final class EditPhotoViewController: UIViewController {
         props.onSetTitle.perform(with: title)
         delegate?.didSaveBtnPressed()
         props.onBack.perform()
+    }
+    
+    private func updateShowDataBtn() {
+        let hideImage = UIImage(named: "eye_open_ic")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+        let showImage = UIImage(named: "eye_close_ic")?.withTintColor(.white, renderingMode: .alwaysTemplate)
+        let btnImage = stampLabel.isHidden ? showImage : hideImage
+        
+        let btnTitle = stampLabel.isHidden ? "Show Meta Data" : "Hide Meta Data"
+        showDataBtn.setImageForAllStates(btnImage)
+        showDataBtn.setTitleForAllStates(btnTitle)
     }
     
     @IBAction private func backBtnAction(_ sender: UIButton) {
@@ -164,6 +179,7 @@ final class EditPhotoViewController: UIViewController {
     
     @IBAction private func showDataBtnAction(_ sender: UIButton) {
         stampLabel.isHidden.toggle()
+        updateShowDataBtn()
     }
     
     @IBAction private func saveInGalleryBtnAction(_ sender: UIButton) {

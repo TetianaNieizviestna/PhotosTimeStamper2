@@ -77,6 +77,7 @@ final class ImageListViewController: UIViewController {
     
     private func setupUI() {
         setupTableView()
+        setupButtons([addPhotoBtn])
     }
 
     private func setupTableView() {
