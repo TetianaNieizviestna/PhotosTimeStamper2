@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import CoreGraphics
-import AVFAudio
+import Photos
 
 protocol EditPhotoScreenDelegate: AnyObject {
     func didSaveBtnPressed()
@@ -18,11 +17,13 @@ extension EditPhotoViewController {
         let title: String
         let image: UIImage?
         let stamp: String
+        let location: String
         let isSaved: Bool
         
         let onSetTitle: CommandWith<String>
         let onSetImage: CommandWith<(UIImage, String)>
         let onSetStamp: CommandWith<String>
+        let onSetLocation: CommandWith<String>
         
         let onBack: Command
         
@@ -30,10 +31,12 @@ extension EditPhotoViewController {
             title: "",
             image: nil,
             stamp: "",
+            location: "",
             isSaved: false,
             onSetTitle: .nop,
             onSetImage: .nop,
             onSetStamp: .nop,
+            onSetLocation: .nop,
             onBack: .nop
         )
     }
@@ -50,16 +53,26 @@ final class EditPhotoViewController: UIViewController {
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var saveInListBtn: GradientButton!
     @IBOutlet private var photoImageView: UIImageView!
+
     @IBOutlet private var stampLabel: UILabel!
+    @IBOutlet private var locationLabel: UILabel!
+    
+    @IBOutlet private var menuStackView: UIStackView!
+    
+    @IBOutlet private var chooseImageStackView: UIStackView!
     @IBOutlet private var cameraBtn: GradientButton!
     @IBOutlet private var galleryBtn: GradientButton!
-    @IBOutlet private var showDataBtn: GradientButton!
+    
+    @IBOutlet private var timestampBtn: GradientButton!
+    
+    @IBOutlet private var locationBtn: GradientButton!
     @IBOutlet private var saveInGalleryBtn: GradientButton!
     @IBOutlet private var shareBtn: GradientButton!
     @IBOutlet private var printBtn: GradientButton!
     
+    @IBOutlet private var addImageBtn: GradientButton!
     
-    @IBOutlet private var ratioConstraint: NSLayoutConstraint!
+    @IBOutlet private var heightImageViewConstraint: NSLayoutConstraint!
     
     private var imagePicker = UIImagePickerController()
 
@@ -78,22 +91,26 @@ final class EditPhotoViewController: UIViewController {
         photoImageView.image = props.image
         
         fitImageViewSize()
-        
+
         stampLabel.text = props.stamp
+        locationLabel.text = props.location
         titleLabel.text = titleLabel.text
         updateShowDataBtn()
     }
     
     private func setupUI() {
         configureImagePicker()
+        photoImageView.setCornersRadius(6)
         setupButtons([
             saveInListBtn,
             cameraBtn,
             galleryBtn,
-            showDataBtn,
+            timestampBtn,
+            locationBtn,
             saveInGalleryBtn,
             shareBtn,
-            printBtn
+            printBtn,
+            addImageBtn
         ])
     }
 
@@ -104,13 +121,15 @@ final class EditPhotoViewController: UIViewController {
     }
 
     private func fitImageViewSize() {
-        guard let image = props.image,
-              image.size.height > 0,
-              image.size.width > 0 else { return }
-        
-        let ratio = image.size.width / image.size.height
-        
-        ratioConstraint.constant = ratio
+        heightImageViewConstraint.constant = photoImageView.intrinsicContentSize.height * photoImageView.bounds.width / photoImageView.intrinsicContentSize.width
+    
+        if photoImageView.frame.width > photoImageView.frame.height {
+            photoImageView.contentMode = .scaleAspectFit
+            //since the width > height we may fit it and we'll have bands on top/bottom
+        } else {
+            photoImageView.contentMode = .scaleToFill
+            //width < height we fill it until width is taken up and clipped on top/bottom
+        }
         
         view.layoutSubviews()
     }
@@ -126,78 +145,13 @@ final class EditPhotoViewController: UIViewController {
     }
     
     private func updateShowDataBtn() {
-        let hideImage = UIImage(named: "eye_open_ic")?.withTintColor(.white, renderingMode: .alwaysTemplate)
-        let showImage = UIImage(named: "eye_close_ic")?.withTintColor(.white, renderingMode: .alwaysTemplate)
-        let btnImage = stampLabel.isHidden ? showImage : hideImage
-        
-        let btnTitle = stampLabel.isHidden ? "Show Meta Data" : "Hide Meta Data"
-        showDataBtn.setImageForAllStates(btnImage)
-        showDataBtn.setTitleForAllStates(btnTitle)
+        let stampBtnAlpha = stampLabel.isHidden ? 1 : 0.5
+        let locationBtnAlpha = locationLabel.isHidden ? 1 : 0.5
+        timestampBtn.alpha = stampBtnAlpha
+        locationBtn.alpha = locationBtnAlpha
     }
     
-    @IBAction private func backBtnAction(_ sender: UIButton) {
-        if props.isSaved {
-            props.onBack.perform()
-        } else {
-            let options = [
-                AlertOption(
-                    title: "No",
-                    action: .nop
-                ),
-                AlertOption(
-                    title: "Yes",
-                    action: props.onBack
-                ),
-            ]
-            showAlertWithOptions(
-                title: "",
-                message: "Photo will not save. Are you sure?",
-                options: options
-            )
-        }
-    }
-    
-    @IBAction private func cameraBtnAction(_ sender: UIButton) {
-#if targetEnvironment(simulator)
-        showAlert(title: "Info", message: "You are using simulator. Native camera crashes it.")
-#else
-        imagePicker.sourceType = .camera
-        checkPermissionsCamera() { [weak self] in
-            guard let self = self else { return }
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-#endif
-    }
-    
-    @IBAction private func galleryBtnAction(_ sender: UIButton) {
-        imagePicker.sourceType = .photoLibrary
-        checkPermissionsLibrary() { [weak self] in
-            guard let self = self else { return }
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction private func showDataBtnAction(_ sender: UIButton) {
-        stampLabel.isHidden.toggle()
-        updateShowDataBtn()
-    }
-    
-    @IBAction private func saveInGalleryBtnAction(_ sender: UIButton) {
-        if props.image != nil,
-           let image = containerView.toImage() {
-            UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        } else {
-            showChooseImageAlert()
-        }
-    }
-    
-    @IBAction private func shareBtnAction(_ sender: UIButton) {
-        guard props.image != nil,
-              let image: UIImage = containerView.toImage() else {
-                  showChooseImageAlert()
-                  return
-              }
-        
+    private func showShareController(image: UIImage) {
         let activityViewController = UIActivityViewController(
             activityItems: [image],
             applicationActivities: nil
@@ -223,7 +177,78 @@ final class EditPhotoViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    @IBAction private func printBtnAction(_ sender: UIButton) {
+    @IBAction private func backBtnAction(_ sender: GradientButton) {
+        if props.isSaved {
+            props.onBack.perform()
+        } else {
+            let options = [
+                AlertOption(
+                    title: "No",
+                    action: .nop
+                ),
+                AlertOption(
+                    title: "Yes",
+                    action: props.onBack
+                ),
+            ]
+            showAlertWithOptions(
+                title: "",
+                message: "Photo will not save. Are you sure?",
+                options: options
+            )
+        }
+    }
+    
+    @IBAction private func cameraBtnAction(_ sender: GradientButton) {
+#if targetEnvironment(simulator)
+        showAlert(title: "Info", message: "You are using simulator. Native camera crashes it.")
+#else
+        imagePicker.sourceType = .camera
+        checkPermissionsCamera() { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+#endif
+    }
+    
+    @IBAction private func galleryBtnAction(_ sender: GradientButton) {
+        imagePicker.sourceType = .photoLibrary
+        checkPermissionsLibrary() { [weak self] in
+            guard let self = self else { return }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction private func timestampBtnAction(_ sender: GradientButton) {
+        stampLabel.isHidden.toggle()
+        updateShowDataBtn()
+    }
+    
+    @IBAction func locationBtnAction(_ sender: GradientButton) {
+        locationLabel.isHidden.toggle()
+        updateShowDataBtn()
+    }
+    
+    
+    @IBAction private func saveInGalleryBtnAction(_ sender: GradientButton) {
+        if props.image != nil,
+           let image = containerView.toImage() {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        } else {
+            showChooseImageAlert()
+        }
+    }
+    
+    @IBAction private func shareBtnAction(_ sender: GradientButton) {
+        guard props.image != nil,
+              let image: UIImage = containerView.toImage() else {
+                  showChooseImageAlert()
+                  return
+              }
+        showShareController(image: image)
+    }
+    
+    @IBAction private func printBtnAction(_ sender: GradientButton) {
         guard props.image != nil else {
             showChooseImageAlert()
             return
@@ -239,7 +264,7 @@ final class EditPhotoViewController: UIViewController {
         printController.present(from: self.view.frame, in: self.view, animated: true, completionHandler: nil)
     }
     
-    @IBAction private func saveInListBtnAction(_ sender: UIButton) {
+    @IBAction private func saveInListBtnAction(_ sender: GradientButton) {
         if props.title.isEmpty {
             let onCancel = AlertOptionWithText(
                 title: "Cancel",
@@ -260,7 +285,12 @@ final class EditPhotoViewController: UIViewController {
             saveInList(with: props.title)
         }
     }
-
+    
+    
+    @IBAction func addImageBtnAction(_ sender: GradientButton) {
+        chooseImageStackView.isHidden.toggle()
+    }
+    
     deinit {
         print("deinit \(self.self)")
     }
@@ -273,19 +303,20 @@ extension EditPhotoViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     @objc internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let pickedImage = info[.originalImage] as? UIImage,
            let imagePath = info[.imageURL] as? URL,
            let fixedImage = pickedImage.fixedOrientation() {
+            chooseImageStackView.isHidden = true
 
             props.onSetImage.perform(with: (fixedImage, imagePath.absoluteString))
-            
-            if let imageSource = CGImageSourceCreateWithURL(imagePath as CFURL, nil),
-               let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary?,
-               let exifDict = imageProperties[kCGImagePropertyExifDictionary],
-               let dateTimeOriginal = exifDict[kCGImagePropertyExifDateTimeOriginal] {
-
-                if let stamp = dateTimeOriginal as? String {
-                    props.onSetStamp.perform(with: stamp)
+                         
+            if let pickedAsset = info[.phAsset] as? PHAsset {
+                if let date = pickedAsset.creationDate {
+                    props.onSetStamp.perform(with: "\(date)")
+                }
+                if let location = pickedAsset.location {
+                    props.onSetLocation.perform(with: "<\(location.coordinate.latitude), \(location.coordinate.longitude)>")
                 }
             }
         }

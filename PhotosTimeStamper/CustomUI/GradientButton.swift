@@ -57,4 +57,20 @@ extension UIButton {
         setTitle(text, for: .normal)
         setTitle(text, for: .selected)
     }
+    
+    func setTitleColorForAllStates(_ color: UIColor) {
+        setTitleColor(color, for: .highlighted)
+        setTitleColor(color, for: .focused)
+        setTitleColor(color, for: .normal)
+        setTitleColor(color, for: .selected)
+    }
+    
+    func setupDefaultButton() {
+        imageView?.contentMode = .scaleAspectFit
+        let image = imageView?.image?.withTintColor(.red, renderingMode: .alwaysTemplate)
+        setImageForAllStates(image)
+        setTitleColorForAllStates(.red)
+        setCornersRadius(6)
+        tintColor = .red
+    }
 }

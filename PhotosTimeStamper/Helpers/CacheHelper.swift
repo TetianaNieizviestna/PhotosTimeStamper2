@@ -12,14 +12,16 @@ struct CachedStampedImage: Codable {
     let data: Data
     let title: String
     let stamp: String
-    
+    let locationText: String
+
     func toImage() -> StampedImageModel? {
         if let image = UIImage(data: data) {
             return .init(
                 id: id,
                 title: title,
                 image: image,
-                stamp: stamp
+                stamp: stamp,
+                locationText: locationText
             )
         }
         return nil

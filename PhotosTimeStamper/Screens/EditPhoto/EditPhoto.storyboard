@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,92 +18,120 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwP-v9-iVQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peV-v7-CiM">
-                                        <rect key="frame" x="184.5" y="15" width="45" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVT-eU-EXM">
-                                        <rect key="frame" x="15" y="14" width="19.5" height="22"/>
-                                        <color key="tintColor" red="0.80784313725490198" green="0.21568627450980393" blue="0.35686274509803922" alpha="1" colorSpace="deviceRGB"/>
-                                        <state key="normal" image="arrow.backward" catalog="system"/>
-                                        <connections>
-                                            <action selector="backBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="PP6-aE-bvm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-Ws-bdC" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="310" y="2.5" width="89" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVZ-qe-bNh">
+                                        <rect key="frame" x="15" y="0.0" width="384" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVT-eU-EXM">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="X2m-19-FYo"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.80784313725490198" green="0.21568627450980393" blue="0.35686274509803922" alpha="1" colorSpace="deviceRGB"/>
+                                                <state key="normal" image="arrow.backward" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="PP6-aE-bvm"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peV-v7-CiM">
+                                                <rect key="frame" x="40" y="0.0" width="244" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-Ws-bdC" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                <rect key="frame" x="284" y="0.0" width="100" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="dCD-vX-X4a"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="In List" image="save_list_ic-2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveInListBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="5ih-m5-WBq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="whC-Kd-hIJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="vhi-cV-Ma2"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="30" minY="30" maxX="30" maxY="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="save_list_ic-2" title="In List" imagePadding="10" buttonSize="small">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="saveInListBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="5ih-m5-WBq"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="DTM-Ws-bdC" firstAttribute="centerY" secondItem="peV-v7-CiM" secondAttribute="centerY" id="2in-uo-C8a"/>
-                                    <constraint firstItem="kVT-eU-EXM" firstAttribute="centerY" secondItem="hwP-v9-iVQ" secondAttribute="centerY" id="4Wz-ym-Bju"/>
-                                    <constraint firstItem="kVT-eU-EXM" firstAttribute="leading" secondItem="hwP-v9-iVQ" secondAttribute="leading" constant="15" id="6ja-6l-0al"/>
-                                    <constraint firstAttribute="height" constant="50" id="G1D-I0-gM5"/>
-                                    <constraint firstItem="peV-v7-CiM" firstAttribute="centerX" secondItem="hwP-v9-iVQ" secondAttribute="centerX" id="KrG-dU-DiU"/>
-                                    <constraint firstItem="peV-v7-CiM" firstAttribute="centerY" secondItem="hwP-v9-iVQ" secondAttribute="centerY" id="Lzn-4y-B1e"/>
-                                    <constraint firstAttribute="trailing" secondItem="DTM-Ws-bdC" secondAttribute="trailing" constant="15" id="uv8-e4-F4n"/>
+                                    <constraint firstAttribute="trailing" secondItem="wVZ-qe-bNh" secondAttribute="trailing" constant="15" id="6do-DZ-6DJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="G1D-I0-gM5"/>
+                                    <constraint firstItem="wVZ-qe-bNh" firstAttribute="centerY" secondItem="hwP-v9-iVQ" secondAttribute="centerY" id="LcH-dg-XOZ"/>
+                                    <constraint firstItem="wVZ-qe-bNh" firstAttribute="leading" secondItem="hwP-v9-iVQ" secondAttribute="leading" constant="15" id="n1a-RC-YSw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-fR-6MB">
-                                <rect key="frame" x="15" y="109" width="384" height="384"/>
+                                <rect key="frame" x="15" y="103" width="384" height="384"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-dJ-GdJ">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-IJ-pGk">
-                                        <rect key="frame" x="119" y="352.5" width="250" height="16.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="ujA-En-Sgb"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Date and time stamp">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
-                                                    <font key="NSFont" size="14" name="SFMono-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFd-zK-pr5">
+                                        <rect key="frame" x="237" y="334" width="132" height="35"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-IJ-pGk">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="17.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Date and time stamp">
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="NSColor" red="1" green="0.28235294119999998" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
+                                                            <font key="NSFont" size="14" name="SFMono-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmn-vi-6dP">
+                                                <rect key="frame" x="0.0" y="17.5" width="132" height="17.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Location">
+                                                        <attributes>
+                                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="NSColor" red="1" green="0.28235294119999998" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
+                                                            <font key="NSFont" size="14" name="SFMono-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cAr-dJ-GdJ" secondAttribute="trailing" id="0OL-wU-mYT"/>
-                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" constant="-15" id="5Dn-gK-TD5"/>
+                                    <constraint firstAttribute="trailing" secondItem="pFd-zK-pr5" secondAttribute="trailing" constant="15" id="DJ1-DX-H6N"/>
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="top" secondItem="iYg-fR-6MB" secondAttribute="top" id="IDP-dW-Uqr"/>
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" id="MAD-fs-gPn"/>
                                     <constraint firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" id="YXf-k6-ou3"/>
-                                    <constraint firstItem="Sdd-IJ-pGk" firstAttribute="trailing" secondItem="cAr-dJ-GdJ" secondAttribute="trailing" constant="-15" id="q0h-eI-jkj"/>
-                                    <constraint firstAttribute="height" secondItem="iYg-fR-6MB" secondAttribute="width" multiplier="1:1" id="v9a-vh-JE7"/>
+                                    <constraint firstAttribute="height" constant="384" id="mGx-h9-pXu"/>
+                                    <constraint firstAttribute="bottom" secondItem="pFd-zK-pr5" secondAttribute="bottom" constant="15" id="oPa-aW-qFB"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-MU-Buc">
-                                <rect key="frame" x="15" y="577" width="384" height="270"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-MU-Buc">
+                                <rect key="frame" x="15" y="807" width="384" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-hY-Y4v" userLabel="Take Photo" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="189.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="189.5" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="camera_ic" title="Camera" imagePadding="10">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,7 +141,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC3-1y-pac" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                <rect key="frame" x="194.5" y="0.0" width="189.5" height="50"/>
+                                                <rect key="frame" x="194.5" y="0.0" width="189.5" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="gallery_ic" title="Gallery" imagePadding="10">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
@@ -124,50 +153,105 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-aR-AXl" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="384" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="eye_close_ic" title="Show/Hide Meta Data" imagePadding="10">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="showDataBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="1gL-3R-jcc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110" width="384" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="save_gallery_ic" title="Save In Gallery" imagePadding="10">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="saveInGalleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="utq-ZO-DSH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="165" width="384" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="share_ic" title="Share" imagePadding="10">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="shareBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="RR5-h9-7N4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ZF-edt" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="220" width="384" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="S9X-NR-XOh"/>
+                                            <constraint firstAttribute="height" constant="40" id="Hxt-Mc-UnD"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="print_ic" title="Print" imagePadding="10">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="printBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="fug-x9-nVX"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rry-iW-hg3">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ajg-Gw-RkT">
+                                                <rect key="frame" x="72" y="0.0" width="240" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="w24-WA-pB9"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" image="save_gallery_ic">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="saveInGalleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="utq-ZO-DSH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-aR-AXl" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="4rg-4l-2YQ"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" image="timestamp_ic1">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="timestampBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="EFJ-u8-ZI9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cE-cf-h6j" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="czq-tU-W1B"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" image="location_ic">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="locationBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="xf2-I0-MxH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="120" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="2qG-5Y-1RS"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" image="share_ic">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="shareBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="RR5-h9-7N4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ZF-edt" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="160" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="S9X-NR-XOh"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" image="print_ic">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="printBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="fug-x9-nVX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bQ-vo-yYT" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="4tg-Uf-ZpV"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="add_image_ic"/>
+                                                        <connections>
+                                                            <action selector="addImageBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="55E-E3-kTQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="5cj-1a-Iwk"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Ajg-Gw-RkT" secondAttribute="bottom" id="S1H-Ip-g1P"/>
+                                            <constraint firstItem="Ajg-Gw-RkT" firstAttribute="top" secondItem="rry-iW-hg3" secondAttribute="top" id="YPs-Bh-SHD"/>
+                                            <constraint firstItem="Ajg-Gw-RkT" firstAttribute="centerX" secondItem="rry-iW-hg3" secondAttribute="centerX" id="p1i-o7-dv2"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -180,25 +264,29 @@
                             <constraint firstItem="hwP-v9-iVQ" firstAttribute="top" secondItem="Hhr-rJ-rjo" secondAttribute="top" id="HCG-ln-88o"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="trailing" secondItem="IZa-MU-Buc" secondAttribute="trailing" constant="15" id="KFf-Ev-40p"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" constant="-15" id="O7Q-GT-7or"/>
-                            <constraint firstItem="IZa-MU-Buc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iYg-fR-6MB" secondAttribute="bottom" constant="15" id="fAC-Ev-fak"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="hwP-v9-iVQ" secondAttribute="leading" id="gjO-Ro-BjJ"/>
                             <constraint firstItem="IZa-MU-Buc" firstAttribute="bottom" secondItem="Hhr-rJ-rjo" secondAttribute="bottom" constant="-15" id="kWF-os-DUR"/>
                             <constraint firstItem="iYg-fR-6MB" firstAttribute="top" secondItem="hwP-v9-iVQ" secondAttribute="bottom" constant="15" id="otX-K5-ZkS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImageBtn" destination="6bQ-vo-yYT" id="ggv-ph-c1f"/>
                         <outlet property="backBtn" destination="kVT-eU-EXM" id="pZv-xw-LKy"/>
                         <outlet property="cameraBtn" destination="wIS-hY-Y4v" id="f21-Ly-OiL"/>
+                        <outlet property="chooseImageStackView" destination="9x0-aa-pg1" id="tj5-f9-Mr9"/>
                         <outlet property="containerView" destination="iYg-fR-6MB" id="fZp-Qv-D8n"/>
                         <outlet property="galleryBtn" destination="YC3-1y-pac" id="6zN-hq-8uc"/>
+                        <outlet property="heightImageViewConstraint" destination="mGx-h9-pXu" id="yto-AC-gta"/>
+                        <outlet property="locationBtn" destination="6cE-cf-h6j" id="ByU-5q-HJv"/>
+                        <outlet property="locationLabel" destination="cmn-vi-6dP" id="oC2-8K-CnY"/>
+                        <outlet property="menuStackView" destination="IZa-MU-Buc" id="Fao-3S-6kF"/>
                         <outlet property="photoImageView" destination="cAr-dJ-GdJ" id="h4L-qW-4Po"/>
                         <outlet property="printBtn" destination="sRv-ZF-edt" id="cW3-NN-4Et"/>
-                        <outlet property="ratioConstraint" destination="v9a-vh-JE7" id="zZG-93-z5j"/>
                         <outlet property="saveInGalleryBtn" destination="2Z9-Vi-pMP" id="ZRh-1H-avR"/>
                         <outlet property="saveInListBtn" destination="DTM-Ws-bdC" id="pIP-Fo-rqU"/>
                         <outlet property="shareBtn" destination="UrP-ci-yhb" id="SsR-UB-kr8"/>
-                        <outlet property="showDataBtn" destination="W5j-aR-AXl" id="qsT-iQ-KFx"/>
                         <outlet property="stampLabel" destination="Sdd-IJ-pGk" id="P8u-Uw-hhu"/>
+                        <outlet property="timestampBtn" destination="W5j-aR-AXl" id="qsT-iQ-KFx"/>
                         <outlet property="titleLabel" destination="peV-v7-CiM" id="hex-pJ-owF"/>
                     </connections>
                 </viewController>
@@ -209,36 +297,44 @@
     </scenes>
     <designables>
         <designable name="2Z9-Vi-pMP">
-            <size key="intrinsicContentSize" width="154.5" height="39"/>
+            <size key="intrinsicContentSize" width="25" height="25"/>
+        </designable>
+        <designable name="6bQ-vo-yYT">
+            <size key="intrinsicContentSize" width="25" height="25"/>
+        </designable>
+        <designable name="6cE-cf-h6j">
+            <size key="intrinsicContentSize" width="307" height="306"/>
         </designable>
         <designable name="DTM-Ws-bdC">
-            <size key="intrinsicContentSize" width="89" height="35"/>
+            <size key="intrinsicContentSize" width="73" height="25"/>
         </designable>
         <designable name="UrP-ci-yhb">
-            <size key="intrinsicContentSize" width="96.5" height="39"/>
+            <size key="intrinsicContentSize" width="25" height="25"/>
         </designable>
         <designable name="W5j-aR-AXl">
-            <size key="intrinsicContentSize" width="198.5" height="39"/>
+            <size key="intrinsicContentSize" width="344" height="344"/>
         </designable>
         <designable name="YC3-1y-pac">
-            <size key="intrinsicContentSize" width="104.5" height="39"/>
+            <size key="intrinsicContentSize" width="112.5" height="39"/>
         </designable>
         <designable name="sRv-ZF-edt">
-            <size key="intrinsicContentSize" width="89.5" height="39"/>
+            <size key="intrinsicContentSize" width="25" height="25"/>
         </designable>
         <designable name="wIS-hY-Y4v">
-            <size key="intrinsicContentSize" width="109.5" height="39"/>
+            <size key="intrinsicContentSize" width="118.5" height="39"/>
         </designable>
     </designables>
     <resources>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="add_image_ic" width="25" height="25"/>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="camera_ic" width="25" height="25"/>
-        <image name="eye_close_ic" width="25" height="25"/>
         <image name="gallery_ic" width="25" height="25"/>
+        <image name="location_ic" width="307" height="306"/>
         <image name="print_ic" width="25" height="25"/>
         <image name="save_gallery_ic" width="25" height="25"/>
         <image name="save_list_ic-2" width="25" height="25"/>
         <image name="share_ic" width="25" height="25"/>
+        <image name="timestamp_ic1" width="344" height="344"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

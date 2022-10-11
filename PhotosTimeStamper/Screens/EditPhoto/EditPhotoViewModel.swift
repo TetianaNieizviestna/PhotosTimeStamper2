@@ -22,8 +22,9 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
     private var imageId: String
     private var title: String
     private var image: UIImage?
-    private var stamp: String
-    
+    private var timestampText: String
+    private var locationText: String
+
     private var isSaved = false
     
     init(_ coordinator: EditPhotoCoordinatorType, serviceHolder: ServiceHolder, imageModel: StampedImageModel, isSaved: Bool) {
@@ -34,7 +35,8 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
         
         imageId = imageModel.id
         title = imageModel.title
-        stamp = imageModel.stamp
+        timestampText = imageModel.stamp
+        locationText = imageModel.locationText
         image = imageModel.image
         
         loadImageData()
@@ -61,8 +63,15 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
     }
     
     private func setStamp(text: String) {
-        isSaved = self.stamp == text
-        stamp = "DATE: \(text)"
+        isSaved = self.timestampText == text
+        timestampText = text
+
+        updateProps()
+    }
+    
+    private func setLocation(text: String) {
+        isSaved = locationText == text
+        locationText = text
 
         updateProps()
     }
@@ -76,7 +85,8 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
             id: imageId,
             title: title,
             image: image,
-            stamp: stamp
+            stamp: timestampText,
+            locationText: locationText
         )
         storageService.saveImage(imageData: imageData)
     }
@@ -85,7 +95,8 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
         let props = EditPhotoProps(
             title: title,
             image: image,
-            stamp: stamp,
+            stamp: timestampText,
+            location: locationText,
             isSaved: isSaved,
             onSetTitle: CommandWith { [weak self] text in
                 self?.changeTitle(text: text)
@@ -97,12 +108,16 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
             onSetStamp: CommandWith { [weak self] text in
                 self?.setStamp(text: text)
             },
+            onSetLocation: CommandWith { [weak self] text in
+                self?.setLocation(text: text)
+            },
             onBack: Command { [weak self] in
                 self?.coordinator.dismiss()
             }
         )
-        DispatchQueue.main.async {
-            self.didStateChanged?(props)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.didStateChanged?(props)
         }
     }
 }
