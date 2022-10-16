@@ -76,13 +76,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-fR-6MB">
-                                <rect key="frame" x="15" y="103" width="384" height="384"/>
+                                <rect key="frame" x="57" y="103" width="300" height="384"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="cAr-dJ-GdJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="384"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pFd-zK-pr5">
-                                        <rect key="frame" x="237" y="334" width="132" height="35"/>
+                                        <rect key="frame" x="153" y="334" width="132" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-IJ-pGk">
                                                 <rect key="frame" x="0.0" y="0.0" width="132" height="17.5"/>
@@ -126,6 +126,7 @@
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="top" secondItem="iYg-fR-6MB" secondAttribute="top" id="IDP-dW-Uqr"/>
                                     <constraint firstItem="cAr-dJ-GdJ" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" id="MAD-fs-gPn"/>
                                     <constraint firstAttribute="bottom" secondItem="cAr-dJ-GdJ" secondAttribute="bottom" id="YXf-k6-ou3"/>
+                                    <constraint firstAttribute="width" constant="300" id="gME-rV-qps"/>
                                     <constraint firstAttribute="height" constant="384" id="mGx-h9-pXu"/>
                                     <constraint firstAttribute="bottom" secondItem="pFd-zK-pr5" secondAttribute="bottom" constant="15" id="oPa-aW-qFB"/>
                                 </constraints>
@@ -133,16 +134,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-MU-Buc">
                                 <rect key="frame" x="15" y="807" width="384" height="40"/>
                                 <subviews>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-hY-Y4v" userLabel="Take Photo" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="189.5" height="40"/>
                                                 <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="camera_ic" title="Camera" imagePadding="10">
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Camera" image="camera_ic">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="cameraBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="Kzg-Tk-fFm"/>
                                                 </connections>
@@ -150,11 +151,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC3-1y-pac" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
                                                 <rect key="frame" x="194.5" y="0.0" width="189.5" height="40"/>
                                                 <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="gallery_ic" title="Gallery" imagePadding="10">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Gallery" image="gallery_ic">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="galleryBtnAction:" destination="Txf-5V-Pff" eventType="touchUpInside" id="SNv-jU-L9Y"/>
                                                 </connections>
@@ -267,11 +268,10 @@
                         <constraints>
                             <constraint firstItem="IZa-MU-Buc" firstAttribute="leading" secondItem="Hhr-rJ-rjo" secondAttribute="leading" constant="15" id="2Mp-xZ-akI"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="trailing" secondItem="hwP-v9-iVQ" secondAttribute="trailing" id="3hF-d4-kQE"/>
-                            <constraint firstItem="Hhr-rJ-rjo" firstAttribute="trailing" secondItem="iYg-fR-6MB" secondAttribute="trailing" constant="15" id="7Ud-9c-uZ2"/>
                             <constraint firstItem="hwP-v9-iVQ" firstAttribute="top" secondItem="Hhr-rJ-rjo" secondAttribute="top" id="HCG-ln-88o"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="trailing" secondItem="IZa-MU-Buc" secondAttribute="trailing" constant="15" id="KFf-Ev-40p"/>
-                            <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="iYg-fR-6MB" secondAttribute="leading" constant="-15" id="O7Q-GT-7or"/>
                             <constraint firstItem="Hhr-rJ-rjo" firstAttribute="leading" secondItem="hwP-v9-iVQ" secondAttribute="leading" id="gjO-Ro-BjJ"/>
+                            <constraint firstItem="iYg-fR-6MB" firstAttribute="centerX" secondItem="Hhr-rJ-rjo" secondAttribute="centerX" id="hOV-Jv-3Tk"/>
                             <constraint firstItem="IZa-MU-Buc" firstAttribute="bottom" secondItem="Hhr-rJ-rjo" secondAttribute="bottom" constant="-15" id="kWF-os-DUR"/>
                             <constraint firstItem="iYg-fR-6MB" firstAttribute="top" secondItem="hwP-v9-iVQ" secondAttribute="bottom" constant="15" id="otX-K5-ZkS"/>
                         </constraints>
@@ -295,6 +295,7 @@
                         <outlet property="stampLabel" destination="Sdd-IJ-pGk" id="P8u-Uw-hhu"/>
                         <outlet property="timestampBtn" destination="W5j-aR-AXl" id="qsT-iQ-KFx"/>
                         <outlet property="titleLabel" destination="peV-v7-CiM" id="hex-pJ-owF"/>
+                        <outlet property="widthImageViewConstraint" destination="gME-rV-qps" id="km1-JM-rB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piE-31-fmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -322,13 +323,13 @@
             <size key="intrinsicContentSize" width="344" height="344"/>
         </designable>
         <designable name="YC3-1y-pac">
-            <size key="intrinsicContentSize" width="112.5" height="39"/>
+            <size key="intrinsicContentSize" width="82" height="25"/>
         </designable>
         <designable name="sRv-ZF-edt">
             <size key="intrinsicContentSize" width="64" height="64"/>
         </designable>
         <designable name="wIS-hY-Y4v">
-            <size key="intrinsicContentSize" width="118.5" height="39"/>
+            <size key="intrinsicContentSize" width="88" height="25"/>
         </designable>
     </designables>
     <resources>

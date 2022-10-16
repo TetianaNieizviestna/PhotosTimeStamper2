@@ -73,7 +73,8 @@ final class EditPhotoViewController: UIViewController {
     @IBOutlet private var addImageBtn: GradientButton!
     
     @IBOutlet private var heightImageViewConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private var widthImageViewConstraint: NSLayoutConstraint!
+
     private var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
@@ -96,10 +97,12 @@ final class EditPhotoViewController: UIViewController {
         stampLabel.text = props.stamp
         locationLabel.text = props.location
         titleLabel.text = titleLabel.text
+        addImageBtn.isHidden = props.image != nil
         updateShowDataBtn()
     }
     
     private func setupUI() {
+        widthImageViewConstraint.constant = view.frame.width - 30
         configureImagePicker()
         photoImageView.setCornersRadius(6)
         setupButtons([
@@ -122,8 +125,18 @@ final class EditPhotoViewController: UIViewController {
     }
 
     private func fitImageViewSize() {
-        heightImageViewConstraint.constant = photoImageView.intrinsicContentSize.height * photoImageView.bounds.width / photoImageView.intrinsicContentSize.width
-    
+        var height = photoImageView.intrinsicContentSize.height * photoImageView.bounds.width / photoImageView.intrinsicContentSize.width
+        var width = view.frame.width - 30
+        let multiplier: CGFloat = 0.8
+        
+        if height > view.frame.height * multiplier {
+            height *= multiplier
+            width *= multiplier
+            widthImageViewConstraint.constant = width
+        }
+        
+        heightImageViewConstraint.constant = height
+        
         if photoImageView.frame.width > photoImageView.frame.height {
             photoImageView.contentMode = .scaleAspectFit
             //since the width > height we may fit it and we'll have bands on top/bottom
@@ -146,10 +159,10 @@ final class EditPhotoViewController: UIViewController {
     }
     
     private func updateShowDataBtn() {
-        let stampBtnAlpha = stampLabel.isHidden ? 1 : 0.5
-        let locationBtnAlpha = locationLabel.isHidden ? 1 : 0.5
-        timestampBtn.alpha = stampBtnAlpha
-        locationBtn.alpha = locationBtnAlpha
+        let stampBtnImage = (stampLabel.isHidden || props.stamp.isEmpty) ? Style.Image.timestampOn : Style.Image.timestampOff
+        let locationBtnImage = (locationLabel.isHidden || props.location.isEmpty) ? Style.Image.locationOn : Style.Image.locationOff
+        timestampBtn.setImageForAllStates(stampBtnImage)
+        locationBtn.setImageForAllStates(locationBtnImage)
     }
     
     private func showShareController(image: UIImage) {

@@ -783,11 +783,15 @@
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotosTimeStamper/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = ImageList;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -812,11 +816,15 @@
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotosTimeStamper/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The main goal of this app is to setup, display, save real timestamp on choosen photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = ImageList;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,7 +848,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivtnnx.PhotosTimeStamperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -861,7 +869,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivtnnx.PhotosTimeStamperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -881,6 +889,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivtnnx.PhotosTimeStamperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -900,6 +909,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5AF75H34W7;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivtnnx.PhotosTimeStamperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -23,6 +23,11 @@ struct Style {
         static let settings = UIImage(named: "settings_ic")
         static let settingsSelected = UIImage(named: "settings_filled_ic")
         static let settingsBig = UIImage(named: "settings_big_ic")?.withTintColor(Color.tempSettingsIcon, renderingMode: .alwaysTemplate)
+        
+        static let locationOn = UIImage(named: "location_ic")
+        static let locationOff = UIImage(named: "no-location")
+        static let timestampOn = UIImage(named: "timestamp_ic1")
+        static let timestampOff = UIImage(named: "no-timestamp")
 
     }
 }
