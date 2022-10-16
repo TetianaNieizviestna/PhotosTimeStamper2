@@ -37,7 +37,7 @@ final class ImageListViewModel: ImageListViewModelType {
     
     private func loadImages() {
         setScreenState(.loading)
-        images = storageService.getImages()
+        images = storageService.getImages().reversed()
         setScreenState(.loaded)
     }
     
