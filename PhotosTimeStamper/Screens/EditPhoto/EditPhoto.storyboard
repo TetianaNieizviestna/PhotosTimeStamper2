@@ -132,7 +132,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-MU-Buc">
-                                <rect key="frame" x="15" y="807" width="384" height="40"/>
+                                <rect key="frame" x="15" y="797" width="384" height="50"/>
                                 <subviews>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9x0-aa-pg1">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
@@ -166,10 +166,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rry-iW-hg3">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ajg-Gw-RkT">
-                                                <rect key="frame" x="72" y="0.0" width="240" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ajg-Gw-RkT">
+                                                <rect key="frame" x="59.5" y="5" width="265" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z9-Vi-pMP" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -185,7 +185,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-aR-AXl" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                        <rect key="frame" x="40" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="45" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="4rg-4l-2YQ"/>
                                                         </constraints>
@@ -198,7 +198,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cE-cf-h6j" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                        <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="90" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="czq-tU-W1B"/>
                                                         </constraints>
@@ -211,7 +211,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-ci-yhb" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                        <rect key="frame" x="120" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="135" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="2qG-5Y-1RS"/>
                                                         </constraints>
@@ -224,7 +224,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ZF-edt" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                        <rect key="frame" x="160" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="180" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="S9X-NR-XOh"/>
                                                         </constraints>
@@ -237,7 +237,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bQ-vo-yYT" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
-                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="225" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="4tg-Uf-ZpV"/>
                                                         </constraints>
@@ -248,19 +248,21 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="5cj-1a-Iwk"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="0.83963482199999995" blue="0.25882352939999997" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Ajg-Gw-RkT" secondAttribute="bottom" id="S1H-Ip-g1P"/>
-                                            <constraint firstItem="Ajg-Gw-RkT" firstAttribute="top" secondItem="rry-iW-hg3" secondAttribute="top" id="YPs-Bh-SHD"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ajg-Gw-RkT" secondAttribute="bottom" constant="5" id="S1H-Ip-g1P"/>
+                                            <constraint firstItem="Ajg-Gw-RkT" firstAttribute="top" secondItem="rry-iW-hg3" secondAttribute="top" constant="5" id="YPs-Bh-SHD"/>
                                             <constraint firstItem="Ajg-Gw-RkT" firstAttribute="centerX" secondItem="rry-iW-hg3" secondAttribute="centerX" id="p1i-o7-dv2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hhr-rJ-rjo"/>
@@ -279,6 +281,8 @@
                     <connections>
                         <outlet property="addImageBtn" destination="6bQ-vo-yYT" id="ggv-ph-c1f"/>
                         <outlet property="backBtn" destination="kVT-eU-EXM" id="pZv-xw-LKy"/>
+                        <outlet property="bottomToolsBgView" destination="rry-iW-hg3" id="TDC-U1-3sJ"/>
+                        <outlet property="bottomToolsStackView" destination="Ajg-Gw-RkT" id="KnF-ym-bxY"/>
                         <outlet property="cameraBtn" destination="wIS-hY-Y4v" id="f21-Ly-OiL"/>
                         <outlet property="chooseImageStackView" destination="9x0-aa-pg1" id="tj5-f9-Mr9"/>
                         <outlet property="containerView" destination="iYg-fR-6MB" id="fZp-Qv-D8n"/>

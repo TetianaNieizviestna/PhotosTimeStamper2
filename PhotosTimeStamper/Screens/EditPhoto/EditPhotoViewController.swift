@@ -59,17 +59,19 @@ final class EditPhotoViewController: UIViewController {
     
     @IBOutlet private var menuStackView: UIStackView!
     
+    
     @IBOutlet private var chooseImageStackView: UIStackView!
     @IBOutlet private var cameraBtn: GradientButton!
     @IBOutlet private var galleryBtn: GradientButton!
     
+    @IBOutlet private var bottomToolsBgView: UIView!
+    @IBOutlet private var bottomToolsStackView: UIStackView!
+
     @IBOutlet private var timestampBtn: GradientButton!
-    
     @IBOutlet private var locationBtn: GradientButton!
     @IBOutlet private var saveInGalleryBtn: GradientButton!
     @IBOutlet private var shareBtn: GradientButton!
     @IBOutlet private var printBtn: GradientButton!
-    
     @IBOutlet private var addImageBtn: GradientButton!
     
     @IBOutlet private var heightImageViewConstraint: NSLayoutConstraint!
@@ -105,6 +107,10 @@ final class EditPhotoViewController: UIViewController {
         widthImageViewConstraint.constant = view.frame.width - 30
         configureImagePicker()
         photoImageView.setCornersRadius(6)
+        bottomToolsBgView.setCornersRadius(6)
+        
+        cameraBtn.setCornersRadius(6)
+        galleryBtn.setCornersRadius(6)
         setupButtons([
             saveInListBtn,
             cameraBtn,
