@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "default-graph-512_j.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

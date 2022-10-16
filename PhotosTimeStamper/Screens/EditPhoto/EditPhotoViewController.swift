@@ -88,8 +88,9 @@ final class EditPhotoViewController: UIViewController {
     
     private func render(_ props: Props) {
         self.props = props
-        photoImageView.image = props.image
-        
+        if let image = props.image {
+            photoImageView.image = image
+        }
         fitImageViewSize()
 
         stampLabel.text = props.stamp
