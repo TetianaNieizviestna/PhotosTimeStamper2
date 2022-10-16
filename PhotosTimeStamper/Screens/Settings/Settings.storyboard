@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Ril-Kg-rIk">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="CYc-3n-XQa" customClass="SettingsViewController" customModule="PhotosTimeStamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vUH-vT-jIv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6w-Vq-Yuj">
+                                <rect key="frame" x="15" y="62" width="360" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uFR-hE-FyJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yo4-rb-VHA">
+                                <rect key="frame" x="15" y="107" width="360" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SWb-ko-uMe">
+                                <rect key="frame" x="35" y="330.66666666666669" width="320" height="195.66666666666669"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_big_ic" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-So-rTO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                        <color key="tintColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="sIU-cL-rIw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This page is under contructions... It will be available in the next updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE2-eY-RJe">
+                                        <rect key="frame" x="0.0" y="155" width="320" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-Uy-AHD" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                <rect key="frame" x="304" y="60" width="61" height="34.333333333333343"/>
+                                <color key="backgroundColor" red="1" green="0.83921568629999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addPhotoBtnAction:" destination="CYc-3n-XQa" eventType="touchUpInside" id="atU-0R-Uxj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7J4-c8-HMY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7J4-c8-HMY" firstAttribute="bottom" secondItem="yo4-rb-VHA" secondAttribute="bottom" id="22z-7t-fuF"/>
+                            <constraint firstItem="yo4-rb-VHA" firstAttribute="top" secondItem="P6w-Vq-Yuj" secondAttribute="bottom" constant="15" id="5Go-Sc-BQI"/>
+                            <constraint firstItem="7J4-c8-HMY" firstAttribute="trailing" secondItem="P6w-Vq-Yuj" secondAttribute="trailing" constant="15" id="98E-qs-iwR"/>
+                            <constraint firstItem="yo4-rb-VHA" firstAttribute="leading" secondItem="7J4-c8-HMY" secondAttribute="leading" constant="15" id="EBc-ig-cT2"/>
+                            <constraint firstItem="6lC-Uy-AHD" firstAttribute="centerY" secondItem="P6w-Vq-Yuj" secondAttribute="centerY" id="IQA-Zl-qfI"/>
+                            <constraint firstItem="SWb-ko-uMe" firstAttribute="centerY" secondItem="7J4-c8-HMY" secondAttribute="centerY" id="UQO-6v-4C2"/>
+                            <constraint firstItem="7J4-c8-HMY" firstAttribute="trailing" secondItem="yo4-rb-VHA" secondAttribute="trailing" constant="15" id="bLS-mz-y6o"/>
+                            <constraint firstItem="SWb-ko-uMe" firstAttribute="trailing" secondItem="7J4-c8-HMY" secondAttribute="trailing" constant="-35" id="lQv-DP-njb"/>
+                            <constraint firstItem="P6w-Vq-Yuj" firstAttribute="leading" secondItem="7J4-c8-HMY" secondAttribute="leading" constant="15" id="olC-Gu-OPS"/>
+                            <constraint firstItem="P6w-Vq-Yuj" firstAttribute="top" secondItem="7J4-c8-HMY" secondAttribute="top" constant="15" id="qBQ-bQ-6LT"/>
+                            <constraint firstItem="SWb-ko-uMe" firstAttribute="leading" secondItem="7J4-c8-HMY" secondAttribute="leading" constant="35" id="qe4-Os-yhT"/>
+                            <constraint firstItem="7J4-c8-HMY" firstAttribute="trailing" secondItem="6lC-Uy-AHD" secondAttribute="trailing" constant="25" id="xoJ-lR-SJs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoBtn" destination="6lC-Uy-AHD" id="xoA-Gb-1kL"/>
+                        <outlet property="tableView" destination="yo4-rb-VHA" id="UTf-lJ-sRV"/>
+                        <outlet property="tempImageView" destination="6Eq-So-rTO" id="enR-2W-lWT"/>
+                        <outlet property="tempLabel" destination="qE2-eY-RJe" id="gBF-xv-zck"/>
+                        <outlet property="titleLabel" destination="P6w-Vq-Yuj" id="ffi-OY-rfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65i-Fq-jeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="88"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="6lC-Uy-AHD">
+            <size key="intrinsicContentSize" width="61" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="settings_big_ic" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

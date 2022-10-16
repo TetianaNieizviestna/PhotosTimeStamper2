@@ -13,15 +13,17 @@ enum TabItem: Equatable {
     }
     
     case imageList(TabBarItemCoordinatorType)
+    case settings(TabBarItemCoordinatorType)
     
     var item: UITabBarItem {
         let item = UITabBarItem(title: displayTitle, image: icon, selectedImage: iconFill)
-        
-        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Style.Color.tabBarItemSelected], for: .selected)
+        item.imageInsets = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
+        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Style.Color.tabBarSelectedItem], for: .selected)
         item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Style.Color.tabBarItem], for: .normal)
         
-        UITabBar.appearance().tintColor = Style.Color.tabBarItem
+        UITabBar.appearance().tintColor = Style.Color.tabBarSelectedItem
         UITabBar.appearance().unselectedItemTintColor = Style.Color.tabBarItem
+        UITabBar.appearance().backgroundColor = Style.Color.tabBarBg
 
         return item
     }
@@ -29,6 +31,8 @@ enum TabItem: Equatable {
     var index: Int {
         switch self {
         case .imageList:
+            return 0
+        case .settings:
             return 0
         }
     }
@@ -38,6 +42,8 @@ enum TabItem: Equatable {
         switch self {
         case .imageList(let coordinator):
              controller = coordinator.controller
+        case .settings(let coordinator):
+            controller = coordinator.controller
         }
         controller?.tabBarItem = item
         return controller
@@ -47,24 +53,30 @@ enum TabItem: Equatable {
         var image: UIImage?
         switch self {
         case .imageList:
-            image = Style.Image.news
+            image = Style.Image.imageList
+        case .settings:
+            image = Style.Image.settings
         }
-        return image?.withRenderingMode(.alwaysOriginal).withTintColor(Style.Color.tabBarItem)
+        return image?.withRenderingMode(.alwaysTemplate).withTintColor(Style.Color.tabBarItem)
     }
     
     var iconFill: UIImage? {
         var image: UIImage?
         switch self {
         case .imageList:
-            image = Style.Image.newsSelected
+            image = Style.Image.imageListSelected
+        case .settings:
+            image = Style.Image.settingsSelected
         }
-        return image?.withRenderingMode(.alwaysOriginal).withTintColor(Style.Color.tabBarItemSelected)
+        return image?.withRenderingMode(.alwaysTemplate).withTintColor(Style.Color.tabBarItem.withAlphaComponent(0.5))
     }
     
     var displayTitle: String {
         switch self {
         case .imageList:
             return "Images"
+        case .settings:
+            return "Settings"
         }
     }
 }

@@ -9,20 +9,20 @@ import UIKit
 
 struct Style {
     struct Color {
-        static let tabBarItem = UIColor(red: 0, green: 0, blue: 50, alpha: 0.5)
-        static let tabBarItemSelected = UIColor(red: 0, green: 0, blue: 50, alpha: 0.7)
+        static let tabBarSelectedItem = UIColor(hex: "#CE375B")
+        static let tabBarItem = UIColor(hex: "#CE375B").withAlphaComponent(0.5)
+        static let tabBarBg = UIColor(hex: "#FFD642")
         
-        static let segmentText = UIColor.white
-        
-        static let segmentBg = UIColor(red: 0, green: 0, blue: 50, alpha: 0.3)
-        static let segmentBgSelected = UIColor(red: 0, green: 0, blue: 50, alpha: 0.6)
+        static let tempSettingsIcon = UIColor(hex: "#CE375B")
 
     }
     
     struct Image {
-        static let news = UIImage(named: "news")
-        static let newsSelected = UIImage(named: "news_filled")
-        static let favourite = UIImage(named: "favorites")
-        static let favouriteSelected = UIImage(named: "favorites_filled")
+        static let imageList = UIImage(named: "image_list_ic")
+        static let imageListSelected = UIImage(named: "image_list_filled_ic")
+        static let settings = UIImage(named: "settings_ic")
+        static let settingsSelected = UIImage(named: "settings_filled_ic")
+        static let settingsBig = UIImage(named: "settings_big_ic")?.withTintColor(Color.tempSettingsIcon, renderingMode: .alwaysTemplate)
+
     }
 }

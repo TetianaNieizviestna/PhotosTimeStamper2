@@ -18,6 +18,8 @@ final class AppCoordinator {
 
     private var tabBarCoordinator: TabBarCoordinator?
 
+    private var imageListCoordinator: ImageListCoordinator?
+    
     init(window: UIWindow) {
         self.window = window
         

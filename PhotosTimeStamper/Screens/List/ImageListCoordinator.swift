@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol NewsTabCoordinatorType {}
-
-class ImageListTabCoordinator: NSObject, NewsTabCoordinatorType, TabBarItemCoordinatorType {
+class ImageListTabCoordinator: NSObject, TabCoordinatorType, TabBarItemCoordinatorType {
     
     let controller = UINavigationController()
 

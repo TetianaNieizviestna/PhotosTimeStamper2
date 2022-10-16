@@ -43,6 +43,11 @@
 		AB0BC42B276D2F0A002941F5 /* CacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */; };
 		AB0BC42F276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC42E276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift */; };
 		AB0BC431276D3F4B002941F5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BC430276D3F4B002941F5 /* UIImage.swift */; };
+		ABA37EE628FC5386009B9397 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA37EE528FC5386009B9397 /* SettingsCoordinator.swift */; };
+		ABA37EE828FC53F2009B9397 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA37EE728FC53F2009B9397 /* SettingsViewController.swift */; };
+		ABA37EEA28FC53FE009B9397 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA37EE928FC53FE009B9397 /* SettingsViewModel.swift */; };
+		ABA37EEC28FC54DD009B9397 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA37EEB28FC54DD009B9397 /* Settings.storyboard */; };
+		ABA37EEE28FC58CD009B9397 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA37EED28FC58CD009B9397 /* UIColor+hex.swift */; };
 		ABA9BD3B277125A600E5DED1 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA9BD3A277125A600E5DED1 /* GradientButton.swift */; };
 		ABA9BD3D277130DE00E5DED1 /* UIViewController+GradientButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA9BD3C277130DE00E5DED1 /* UIViewController+GradientButtons.swift */; };
 		B2044CDE9DA0F1ADA6F7B985 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 046C45F222731469F0232252 /* libPods-PhotosTimeStamper-PhotosTimeStamperUITests.a */; };
@@ -114,6 +119,11 @@
 		AB0BC42A276D2F0A002941F5 /* CacheHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheHelper.swift; sourceTree = "<group>"; };
 		AB0BC42E276D367E002941F5 /* UIViewController+UIImagePicker+Permissons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIImagePicker+Permissons.swift"; sourceTree = "<group>"; };
 		AB0BC430276D3F4B002941F5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		ABA37EE528FC5386009B9397 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		ABA37EE728FC53F2009B9397 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ABA37EE928FC53FE009B9397 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		ABA37EEB28FC54DD009B9397 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		ABA37EED28FC58CD009B9397 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		ABA9BD3A277125A600E5DED1 /* GradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		ABA9BD3C277130DE00E5DED1 /* UIViewController+GradientButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+GradientButtons.swift"; path = "../../../../UIViewController+GradientButtons.swift"; sourceTree = "<group>"; };
 		B8D36CF05B4DBCD33BB56C0E /* Pods-PhotosTimeStamperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosTimeStamperTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosTimeStamperTests/Pods-PhotosTimeStamperTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0BC3CC276D0634002941F5 /* Date.swift */,
+				ABA37EED28FC58CD009B9397 /* UIColor+hex.swift */,
 				AB0BC3CD276D0634002941F5 /* UIView.swift */,
 				AB0BC3CE276D0634002941F5 /* Data.swift */,
 				AB0BC3CF276D0634002941F5 /* UIViewController+Alert.swift */,
@@ -276,6 +287,7 @@
 		AB0BC3D4276D0634002941F5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ABA37EE428FC5379009B9397 /* Settings */,
 				AB0BC3DA276D0634002941F5 /* List */,
 				AB0BC3DF276D0634002941F5 /* EditPhoto */,
 			);
@@ -345,6 +357,17 @@
 				AB0BC3FB276D0634002941F5 /* ImageStorageService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		ABA37EE428FC5379009B9397 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ABA37EE528FC5386009B9397 /* SettingsCoordinator.swift */,
+				ABA37EE728FC53F2009B9397 /* SettingsViewController.swift */,
+				ABA37EE928FC53FE009B9397 /* SettingsViewModel.swift */,
+				ABA37EEB28FC54DD009B9397 /* Settings.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +480,7 @@
 				AB0BC412276D0634002941F5 /* EditPhoto.storyboard in Resources */,
 				AB0BC38D276C786A002941F5 /* LaunchScreen.storyboard in Resources */,
 				AB0BC419276D0634002941F5 /* StampedImageTableViewCell.xib in Resources */,
+				ABA37EEC28FC54DD009B9397 /* Settings.storyboard in Resources */,
 				AB0BC411276D0634002941F5 /* ImageList.storyboard in Resources */,
 				AB0BC38A276C786A002941F5 /* Assets.xcassets in Resources */,
 			);
@@ -565,12 +589,16 @@
 				AB0BC425276D0634002941F5 /* ImageStorageService.swift in Sources */,
 				AB0BC413276D0634002941F5 /* EditPhotoCoordinator.swift in Sources */,
 				AB0BC405276D0634002941F5 /* UIViewController+Alert.swift in Sources */,
+				ABA37EE628FC5386009B9397 /* SettingsCoordinator.swift in Sources */,
 				ABA9BD3D277130DE00E5DED1 /* UIViewController+GradientButtons.swift in Sources */,
+				ABA37EEA28FC53FE009B9397 /* SettingsViewModel.swift in Sources */,
 				AB0BC418276D0634002941F5 /* Command.swift in Sources */,
 				AB0BC406276D0634002941F5 /* Storyboard.swift in Sources */,
+				ABA37EEE28FC58CD009B9397 /* UIColor+hex.swift in Sources */,
 				AB0BC3FF276D0634002941F5 /* Defines.swift in Sources */,
 				AB0BC404276D0634002941F5 /* Data.swift in Sources */,
 				AB0BC414276D0634002941F5 /* EditPhotoViewController.swift in Sources */,
+				ABA37EE828FC53F2009B9397 /* SettingsViewController.swift in Sources */,
 				AB0BC3FD276D0634002941F5 /* TabItem.swift in Sources */,
 				AB0BC3FE276D0634002941F5 /* TabBarCoordinator.swift in Sources */,
 				AB0BC400276D0634002941F5 /* Style.swift in Sources */,

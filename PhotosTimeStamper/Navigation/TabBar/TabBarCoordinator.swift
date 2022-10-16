@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol TabCoordinatorType {}
+
 protocol TabBarItemCoordinatorType {
     var controller: UINavigationController { get }
 }
@@ -26,12 +28,15 @@ final class TabBarCoordinator: NSObject {
         let tabController = UITabBarController()
 
         let imageList = ImageListTabCoordinator(serviceHolder: serviceHolder)
+        let settings = SettingsTabBarCoordinator(serviceHolder: serviceHolder)
         
         items = [
-            .imageList(imageList)
+            .imageList(imageList),
+            .settings(settings)
         ]
         imageList.start()
-
+        settings.start()
+        
         tabController.viewControllers = items.compactMap { $0.controller }
         tabController.delegate = self
         
@@ -44,22 +49,8 @@ final class TabBarCoordinator: NSObject {
 
 extension TabBarCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        switch viewController {
-        case getTabCoordinatorRootNavigation(index: 0):
-            newsStart()
-            return true
-//        case getTabCoordinatorRootNavigation(index: 1):
-//            return true
-        default:
-            return true
-        }
+        return true
     }
-    
-    private func newsStart() {
-        let coordinator: ImageListTabCoordinator? = getTabCoordinator(index: 0)
-        coordinator?.start()
-    }
-
 }
 
 // MARK: - TabBarCoordinator {
