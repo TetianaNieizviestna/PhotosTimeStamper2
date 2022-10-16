@@ -177,8 +177,32 @@ final class EditPhotoViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
+    private func saveInList() {
+        if props.title.isEmpty {
+            let onCancel = AlertOptionWithText(
+                title: "Cancel",
+                action: .nop
+            )
+            let onOk = AlertOptionWithText(
+                title: "Save",
+                action: CommandWith { [weak self] text in
+                    self?.saveInList(with: text)
+                }
+            )
+            showAlertWithOptionsAndInput(
+                title: "",
+                message: "Please enter the photo title",
+                options: [onCancel, onOk]
+            )
+        } else {
+            saveInList(with: props.title)
+        }
+    }
+    
     @IBAction private func backBtnAction(_ sender: GradientButton) {
         if props.isSaved {
+            props.onBack.perform()
+        } else if props.image == nil {
             props.onBack.perform()
         } else {
             let options = [
@@ -229,11 +253,11 @@ final class EditPhotoViewController: UIViewController {
         updateShowDataBtn()
     }
     
-    
     @IBAction private func saveInGalleryBtnAction(_ sender: GradientButton) {
         if props.image != nil,
            let image = containerView.toImage() {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            saveInList()
         } else {
             showChooseImageAlert()
         }
@@ -285,7 +309,6 @@ final class EditPhotoViewController: UIViewController {
             saveInList(with: props.title)
         }
     }
-    
     
     @IBAction func addImageBtnAction(_ sender: GradientButton) {
         chooseImageStackView.isHidden.toggle()

@@ -7,7 +7,12 @@
 
 import Foundation
 import UIKit
+
 typealias EditPhotoProps = EditPhotoViewController.Props
+
+protocol SaveImageDelegate: AnyObject {
+    func didNewImageSaved()
+}
 
 protocol EditPhotoViewModelType {
     var didStateChanged: ((EditPhotoProps) -> Void)? { get set }
@@ -18,7 +23,8 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
 
     private let coordinator: EditPhotoCoordinatorType
     private var storageService: ImageStorageServiceType
-
+    private var delegate: SaveImageDelegate?
+    
     private var imageId: String
     private var title: String
     private var image: UIImage?
@@ -27,8 +33,16 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
 
     private var isSaved = false
     
-    init(_ coordinator: EditPhotoCoordinatorType, serviceHolder: ServiceHolder, imageModel: StampedImageModel, isSaved: Bool) {
+    init(
+        _ coordinator: EditPhotoCoordinatorType,
+        serviceHolder: ServiceHolder,
+        delegate: SaveImageDelegate?,
+        imageModel: StampedImageModel,
+        isSaved: Bool
+    ) {
         self.coordinator = coordinator
+        self.delegate = delegate
+        
         storageService = serviceHolder.get(by: ImageStorageServiceType.self)
 
         self.isSaved = isSaved
@@ -89,6 +103,9 @@ final class EditPhotoViewModel: EditPhotoViewModelType{
             locationText: locationText
         )
         storageService.saveImage(imageData: imageData)
+        isSaved = true
+        delegate?.didNewImageSaved()
+        updateProps()
     }
 
     private func updateProps() {

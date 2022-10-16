@@ -29,7 +29,7 @@ class ImageListTabCoordinator: NSObject, NewsTabCoordinatorType, TabBarItemCoord
 }
 
 protocol ImageListCoordinatorType {
-    func onImageDetails(imageModel: StampedImageModel, isSaved: Bool)
+    func onImageDetails(delegate: SaveImageDelegate?, imageModel: StampedImageModel, isSaved: Bool)
 }
 
 final class ImageListCoordinator: ImageListCoordinatorType {
@@ -51,10 +51,11 @@ final class ImageListCoordinator: ImageListCoordinatorType {
         }
     }
     
-    func onImageDetails(imageModel: StampedImageModel, isSaved: Bool) {
+    func onImageDetails(delegate: SaveImageDelegate?, imageModel: StampedImageModel, isSaved: Bool) {
         let coordinator = EditPhotoCoordinator(
             navigationController: navigationController,
             serviceHolder: serviceHolder,
+            delegate: delegate,
             imageModel: imageModel,
             isSaved: isSaved
         )

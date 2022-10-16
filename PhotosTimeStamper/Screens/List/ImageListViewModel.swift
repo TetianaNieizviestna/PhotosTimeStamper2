@@ -54,6 +54,7 @@ final class ImageListViewModel: ImageListViewModelType {
             imageData: imageModel,
             onSelect: Command { [weak self] in
                 self?.coordinator.onImageDetails(
+                    delegate: self,
                     imageModel: imageModel,
                     isSaved: true
                 )
@@ -66,6 +67,7 @@ final class ImageListViewModel: ImageListViewModelType {
             state: self.screenState,
             onAddPhoto: Command { [weak self] in
                 self?.coordinator.onImageDetails(
+                    delegate: self,
                     imageModel: .initial,
                     isSaved: false
                 )
@@ -78,5 +80,11 @@ final class ImageListViewModel: ImageListViewModelType {
         DispatchQueue.main.async {
             self.didStateChanged?(props)
         }
+    }
+}
+
+extension ImageListViewModel: SaveImageDelegate {
+    func didNewImageSaved() {
+        refresh()
     }
 }

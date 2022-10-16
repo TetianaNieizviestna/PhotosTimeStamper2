@@ -13,15 +13,11 @@ protocol ImageStorageServiceType: Service {
 }
 
 class ImageStorageService: ImageStorageServiceType {
-    private var images: [StampedImageModel] = {
-        return CacheHelper.shared.getImages()
-    }()
-    
     func saveImage(imageData: StampedImageModel) {
         CacheHelper.shared.addImage(imageData)
     }
     
     func getImages() -> [StampedImageModel] {
-        return images
+        return CacheHelper.shared.getImages()
     }
 }
