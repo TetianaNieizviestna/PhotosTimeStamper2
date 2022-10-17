@@ -14,6 +14,7 @@ enum TabItem: Equatable {
     
     case imageList(TabBarItemCoordinatorType)
     case settings(TabBarItemCoordinatorType)
+    case support(TabBarItemCoordinatorType)
     
     var item: UITabBarItem {
         let item = UITabBarItem(title: displayTitle, image: icon, selectedImage: iconFill)
@@ -32,8 +33,10 @@ enum TabItem: Equatable {
         switch self {
         case .imageList:
             return 0
+        case .support:
+            return 1
         case .settings:
-            return 0
+            return 2
         }
     }
     
@@ -42,6 +45,8 @@ enum TabItem: Equatable {
         switch self {
         case .imageList(let coordinator):
              controller = coordinator.controller
+        case .support(let coordinator):
+            controller = coordinator.controller
         case .settings(let coordinator):
             controller = coordinator.controller
         }
@@ -54,6 +59,8 @@ enum TabItem: Equatable {
         switch self {
         case .imageList:
             image = Style.Image.imageList
+        case .support:
+            image = Style.Image.support
         case .settings:
             image = Style.Image.settings
         }
@@ -65,16 +72,20 @@ enum TabItem: Equatable {
         switch self {
         case .imageList:
             image = Style.Image.imageListSelected
+        case .support:
+            image = Style.Image.supportSelected
         case .settings:
             image = Style.Image.settingsSelected
         }
-        return image?.withRenderingMode(.alwaysTemplate).withTintColor(Style.Color.tabBarItem.withAlphaComponent(0.5))
+        return image?.withRenderingMode(.alwaysTemplate).withTintColor(Style.Color.tabBarSelectedItem)
     }
     
     var displayTitle: String {
         switch self {
         case .imageList:
             return "Images"
+        case .support:
+            return "Support"
         case .settings:
             return "Settings"
         }

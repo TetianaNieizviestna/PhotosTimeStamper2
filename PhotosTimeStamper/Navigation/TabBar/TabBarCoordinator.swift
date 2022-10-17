@@ -28,14 +28,17 @@ final class TabBarCoordinator: NSObject {
         let tabController = UITabBarController()
 
         let imageList = ImageListTabCoordinator(serviceHolder: serviceHolder)
+        let support = SettingsTabBarCoordinator(serviceHolder: serviceHolder)
         let settings = SettingsTabBarCoordinator(serviceHolder: serviceHolder)
-        
+
         items = [
             .imageList(imageList),
-            .settings(settings)
+            .support(support),
+            .settings(settings),
         ]
         imageList.start()
         settings.start()
+        support.start()
         
         tabController.viewControllers = items.compactMap { $0.controller }
         tabController.delegate = self

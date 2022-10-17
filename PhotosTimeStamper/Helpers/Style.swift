@@ -20,6 +20,8 @@ struct Style {
     struct Image {
         static let imageList = UIImage(named: "image_list_ic")
         static let imageListSelected = UIImage(named: "image_list_filled_ic")
+        static let support = UIImage(named: "support_ic")
+        static let supportSelected = UIImage(named: "support_filled_ic")
         static let settings = UIImage(named: "settings_ic")
         static let settingsSelected = UIImage(named: "settings_filled_ic")
         static let settingsBig = UIImage(named: "settings_big_ic")?.withTintColor(Color.tempSettingsIcon, renderingMode: .alwaysTemplate)
