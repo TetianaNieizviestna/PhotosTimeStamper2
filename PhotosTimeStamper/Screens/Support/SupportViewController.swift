@@ -101,9 +101,6 @@ extension SupportViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.identifier) as? MenuTableViewCell else { return UITableViewCell() }
-//        cell.render(props.items[indexPath.row])
-//        return cell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.identifier) as? MenuTableViewCell else { return UITableViewCell() }
         cell.render(props.items[indexPath.row])
         return cell

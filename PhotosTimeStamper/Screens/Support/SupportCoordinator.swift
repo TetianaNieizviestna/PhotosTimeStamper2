@@ -29,6 +29,7 @@ class SupportTabBarCoordinator: NSObject, TabCoordinatorType, TabBarItemCoordina
 
 protocol SupportCoordinatorType {
     func openEmail(emailModel: EmailMessageModel)
+    func showAbout()
 }
 
 final class SupportCoordinator: NSObject, SupportCoordinatorType {
@@ -61,6 +62,13 @@ final class SupportCoordinator: NSObject, SupportCoordinatorType {
         mail.setSubject(emailModel.subject)
         mail.setMessageBody(emailModel.messageBody, isHTML: false)
         navigationController?.present(mail, animated: true)
+    }
+    
+    func showAbout() {
+        navigationController?.showAlert(
+            title: "About Us",
+            message: "The iPhone application that shows the real time of creation and location of any picture.\nYou can save, share, print the picture with a timestamp."
+        )
     }
 }
 

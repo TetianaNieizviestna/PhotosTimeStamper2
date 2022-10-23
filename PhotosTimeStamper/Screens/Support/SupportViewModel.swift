@@ -20,7 +20,8 @@ final class SupportViewModel: SupportViewModelType {
     private let coordinator: SupportCoordinatorType
 
     private var items: [MenuItem] = [
-        .supportEmail
+        .supportEmail,
+        .about
     ]
 
     private var screenState: SupportProps.ScreenState = .initial
@@ -47,7 +48,14 @@ final class SupportViewModel: SupportViewModelType {
             itemType: item,
             onSelect: Command { [weak self] in
                 guard let self = self else { return }
-                self.coordinator.openEmail(emailModel: self.createMessage())
+                switch item {
+                case .initial:
+                    break
+                case .supportEmail:
+                    self.coordinator.openEmail(emailModel: self.createMessage())
+                case .about:
+                    self.coordinator.showAbout()
+                }
             }
         )
     }
