@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Support View Controller-->
+        <scene sceneID="Uww-g9-W14">
+            <objects>
+                <viewController storyboardIdentifier="SupportViewController" id="whL-bg-aT0" customClass="SupportViewController" customModule="PhotosTimeStamper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wac-0z-DkO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGh-tk-h3h">
+                                <rect key="frame" x="15" y="62" width="360" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NdJ-R4-Ia1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-dm-buY">
+                                <rect key="frame" x="15" y="107" width="360" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxY-19-zSq" customClass="GradientButton" customModule="PhotosTimeStamper" customModuleProvider="target">
+                                <rect key="frame" x="304" y="60" width="61" height="34.333333333333343"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.3803921569" blue="0.1960784314" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addPhotoBtnAction:" destination="whL-bg-aT0" eventType="touchUpInside" id="ZLp-Hf-XQf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXe-Yz-H44">
+                                <rect key="frame" x="25" y="785" width="340" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.80784313730000001" green="0.2156862745" blue="0.35686274509999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="06H-GD-xpr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SXe-Yz-H44" firstAttribute="leading" secondItem="06H-GD-xpr" secondAttribute="leading" constant="25" id="5ju-ba-Mz0"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="trailing" secondItem="SXe-Yz-H44" secondAttribute="trailing" constant="25" id="7cw-9g-VlY"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="bottom" secondItem="Xl9-dm-buY" secondAttribute="bottom" id="9sR-d6-YQw"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="trailing" secondItem="Xl9-dm-buY" secondAttribute="trailing" constant="15" id="DE1-of-2Kh"/>
+                            <constraint firstItem="EGh-tk-h3h" firstAttribute="leading" secondItem="06H-GD-xpr" secondAttribute="leading" constant="15" id="OJg-Wd-xsK"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="trailing" secondItem="ZxY-19-zSq" secondAttribute="trailing" constant="25" id="QzR-OX-eBO"/>
+                            <constraint firstItem="ZxY-19-zSq" firstAttribute="centerY" secondItem="EGh-tk-h3h" secondAttribute="centerY" id="SXp-YJ-VtV"/>
+                            <constraint firstItem="EGh-tk-h3h" firstAttribute="top" secondItem="06H-GD-xpr" secondAttribute="top" constant="15" id="ZNM-Pc-JUv"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="bottom" secondItem="SXe-Yz-H44" secondAttribute="bottom" constant="25" id="jUh-gu-g9U"/>
+                            <constraint firstItem="Xl9-dm-buY" firstAttribute="leading" secondItem="06H-GD-xpr" secondAttribute="leading" constant="15" id="npL-aA-aLD"/>
+                            <constraint firstItem="06H-GD-xpr" firstAttribute="trailing" secondItem="EGh-tk-h3h" secondAttribute="trailing" constant="15" id="r0F-Kd-dCs"/>
+                            <constraint firstItem="Xl9-dm-buY" firstAttribute="top" secondItem="EGh-tk-h3h" secondAttribute="bottom" constant="15" id="rHN-r8-mxb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoBtn" destination="ZxY-19-zSq" id="qpl-R5-68O"/>
+                        <outlet property="tableView" destination="Xl9-dm-buY" id="12N-A3-Dsk"/>
+                        <outlet property="tempLabel" destination="SXe-Yz-H44" id="kuu-0Y-QGk"/>
+                        <outlet property="titleLabel" destination="EGh-tk-h3h" id="PZy-4U-tEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgR-J5-F6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="88"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="ZxY-19-zSq">
+            <size key="intrinsicContentSize" width="61" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

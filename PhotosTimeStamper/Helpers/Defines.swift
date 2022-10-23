@@ -13,4 +13,8 @@ struct Defines {
         static let apiKey = "apHgxARkmZpAKiFbsgYYn1ho7S7TPYLb"
         static let baseUrl = "https://api.nytimes.com/svc/mostpopular/v2/"
     }
+    
+    enum Support {
+        static let email = "viv.tnn.x@gmail.com"
+    }
 }

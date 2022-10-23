@@ -28,7 +28,7 @@ final class TabBarCoordinator: NSObject {
         let tabController = UITabBarController()
 
         let imageList = ImageListTabCoordinator(serviceHolder: serviceHolder)
-        let support = SettingsTabBarCoordinator(serviceHolder: serviceHolder)
+        let support = SupportTabBarCoordinator(serviceHolder: serviceHolder)
         let settings = SettingsTabBarCoordinator(serviceHolder: serviceHolder)
 
         items = [

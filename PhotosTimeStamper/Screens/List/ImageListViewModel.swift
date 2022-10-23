@@ -77,8 +77,8 @@ final class ImageListViewModel: ImageListViewModelType {
             },
             items: createItems()
         )
-        DispatchQueue.main.async {
-            self.didStateChanged?(props)
+        DispatchQueue.main.async { [weak self] in
+            self?.didStateChanged?(props)
         }
     }
 }

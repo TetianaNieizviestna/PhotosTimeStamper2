@@ -11,6 +11,8 @@ typealias SettingsProps = SettingsViewController.Props
 
 protocol SettingsViewModelType {
     var didStateChanged: ((SettingsProps) -> Void)? { get set }
+    
+    func loadData()
 }
 
 final class SettingsViewModel: SettingsViewModelType {
@@ -27,22 +29,11 @@ final class SettingsViewModel: SettingsViewModelType {
         self.coordinator = coordinator
         
         storageService = serviceHolder.get(by: ImageStorageServiceType.self)
-        loadImages()
     }
     
     private func setScreenState(_ state: SettingsProps.ScreenState) {
         screenState = state
         updateProps()
-    }
-    
-    private func loadImages() {
-        setScreenState(.loading)
-        images = storageService.getImages()
-        setScreenState(.loaded)
-    }
-    
-    private func refresh() {
-        loadImages()
     }
 
     private func createItems() -> [StampedImageTableViewCell.Props] {
@@ -53,25 +44,20 @@ final class SettingsViewModel: SettingsViewModelType {
         return .initial
     }
     
+    func loadData() {
+        setScreenState(.loaded)
+    }
+    
     private func updateProps() {
         let props = SettingsProps(
-            state: self.screenState,
+            state: screenState,
             title: "Settings",
             tempLabelText: "This page is under contructions...\nIt will be available in the next updates",
             onSave: .nop,
-            onRefresh: Command { [weak self] in
-                self?.refresh()
-            },
             items: createItems()
         )
-        DispatchQueue.main.async {
-            self.didStateChanged?(props)
+        DispatchQueue.main.async { [weak self] in
+            self?.didStateChanged?(props)
         }
-    }
-}
-
-extension SettingsViewModel: SaveImageDelegate {
-    func didNewImageSaved() {
-        refresh()
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 struct Storyboard {
     static let images = UIStoryboard(name: "ImageList", bundle: nil)
     static let settings = UIStoryboard(name: "Settings", bundle: nil)
+    static let support = UIStoryboard(name: "Support", bundle: nil)
     static let editPhoto = UIStoryboard(name: "EditPhoto", bundle: nil)
 
 }
