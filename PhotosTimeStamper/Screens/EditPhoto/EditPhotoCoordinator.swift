@@ -29,6 +29,7 @@ final class EditPhotoCoordinator: EditPhotoCoordinatorType {
         self.navigationController?.navigationBar.isTranslucent = true
         self.serviceHolder = serviceHolder
         self.imageModel = imageModel
+        
         controller?.viewModel = EditPhotoViewModel(
             self,
             serviceHolder: self.serviceHolder,

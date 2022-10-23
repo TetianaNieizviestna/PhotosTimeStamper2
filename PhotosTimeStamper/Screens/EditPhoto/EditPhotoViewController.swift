@@ -345,22 +345,27 @@ extension EditPhotoViewController: UIImagePickerControllerDelegate, UINavigation
         dismiss(animated: true, completion: nil)
     }
     
-    @objc internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+    @objc internal func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
         if let pickedImage = info[.originalImage] as? UIImage,
-           let imagePath = info[.imageURL] as? URL,
            let fixedImage = pickedImage.fixedOrientation() {
             chooseImageStackView.isHidden = true
-
-            props.onSetImage.perform(with: (fixedImage, imagePath.absoluteString))
-                         
-            if let pickedAsset = info[.phAsset] as? PHAsset {
-                if let date = pickedAsset.creationDate {
-                    props.onSetStamp.perform(with: "\(date)")
+            
+            if let imagePath = info[.imageURL] as? URL {
+                props.onSetImage.perform(with: (fixedImage, imagePath.absoluteString))
+                if let pickedAsset = info[.phAsset] as? PHAsset {
+                    if let date = pickedAsset.creationDate {
+                        props.onSetStamp.perform(with: "\(date)")
+                    }
+                    if let location = pickedAsset.location {
+                        props.onSetLocation.perform(with: "<\(location.coordinate.latitude), \(location.coordinate.longitude)>")
+                    }
                 }
-                if let location = pickedAsset.location {
-                    props.onSetLocation.perform(with: "<\(location.coordinate.latitude), \(location.coordinate.longitude)>")
-                }
+            } else {
+                props.onSetImage.perform(with: (fixedImage, "CameraImage"))
+                props.onSetStamp.perform(with: "\(Date())")
             }
         }
         dismiss(animated: true, completion: nil)

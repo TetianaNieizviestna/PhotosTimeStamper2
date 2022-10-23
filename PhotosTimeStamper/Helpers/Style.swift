@@ -11,7 +11,7 @@ struct Style {
     struct Color {
         static let tabBarSelectedItem = UIColor(hex: "#CE375B")
         static let tabBarItem = UIColor(hex: "#CE375B").withAlphaComponent(0.5)
-        static let tabBarBg = UIColor(hex: "#FFD642")
+        static let tabBarBg = UIColor(hex: "#FFD642").withAlphaComponent(0.8)
         
         static let tempSettingsIcon = UIColor(hex: "#CE375B")
         static let menuIconColor = UIColor(hex: "#CE375B")
