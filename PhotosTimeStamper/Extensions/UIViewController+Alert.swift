@@ -10,10 +10,13 @@ import UIKit
 struct AlertOption {
     let title: String
     let action: Command
+    var style: UIAlertAction.Style = .default
 }
+
 struct AlertOptionWithText {
     let title: String
     let action: CommandWith<String>
+    let style: UIAlertAction.Style = .default
 }
 
 extension UIViewController {
@@ -25,15 +28,13 @@ extension UIViewController {
         
         alertVC.addAction(okay)
         self.present(alertVC, animated: true, completion: nil)
-        
-//        showAlertWithOptions(title: title, message: message, options: ["OK"], completion: { completion?()})
     }
     
     func showAlertWithOptions(title: String, message: String, options: [AlertOption]) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         options.forEach { alertOption in
-            let alertAction = UIAlertAction(title: alertOption.title, style: .default, handler: { _ in
+            let alertAction = UIAlertAction(title: alertOption.title, style: alertOption.style, handler: { _ in
                 alertVC.dismiss(animated: true, completion: {
                     alertOption.action.perform()
                 })
@@ -52,7 +53,7 @@ extension UIViewController {
         }
 
         options.forEach { alertOption in
-            let alertAction = UIAlertAction(title: alertOption.title, style: .default, handler: { _ in
+            let alertAction = UIAlertAction(title: alertOption.title, style: alertOption.style, handler: { _ in
                 alertVC.dismiss(animated: true, completion: {
                     if let textField = alertVC.textFields?[0],
                        let text = textField.text {

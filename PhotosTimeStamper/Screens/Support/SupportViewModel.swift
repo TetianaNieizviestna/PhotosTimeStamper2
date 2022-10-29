@@ -21,7 +21,8 @@ final class SupportViewModel: SupportViewModelType {
 
     private var items: [MenuItem] = [
         .supportEmail,
-        .about
+        .appInfo,
+        .aboutUs
     ]
 
     private var screenState: SupportProps.ScreenState = .initial
@@ -53,8 +54,10 @@ final class SupportViewModel: SupportViewModelType {
                     break
                 case .supportEmail:
                     self.coordinator.openEmail(emailModel: self.createMessage())
-                case .about:
+                case .appInfo:
                     self.coordinator.showAbout()
+                case .aboutUs:
+                    self.coordinator.showAboutUs()
                 }
             }
         )

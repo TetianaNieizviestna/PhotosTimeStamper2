@@ -10,7 +10,8 @@ import UIKit
 enum MenuItem {
     case initial
     case supportEmail
-    case about
+    case appInfo
+    case aboutUs
     
     var title: String {
         switch self {
@@ -18,8 +19,10 @@ enum MenuItem {
             return ""
         case .supportEmail:
             return "Send email"
-        case .about:
-            return "About App"
+        case .appInfo:
+            return "App Info"
+        case .aboutUs:
+            return "About Us"
         }
     }
     
@@ -29,8 +32,10 @@ enum MenuItem {
             return nil
         case .supportEmail:
             return UIImage(named: "email_ic")
-        case .about:
-            return UIImage(named: "about_ic")
+        case .appInfo:
+            return UIImage(named: "appinfo_ic")
+        case .aboutUs:
+            return UIImage(named: "about_us_ic")
         }
     }
 }

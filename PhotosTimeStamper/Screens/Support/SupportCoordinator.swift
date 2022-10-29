@@ -30,6 +30,7 @@ class SupportTabBarCoordinator: NSObject, TabCoordinatorType, TabBarItemCoordina
 protocol SupportCoordinatorType {
     func openEmail(emailModel: EmailMessageModel)
     func showAbout()
+    func showAboutUs()
 }
 
 final class SupportCoordinator: NSObject, SupportCoordinatorType {
@@ -66,8 +67,40 @@ final class SupportCoordinator: NSObject, SupportCoordinatorType {
     
     func showAbout() {
         navigationController?.showAlert(
-            title: "About Us",
+            title: "App Info",
             message: "The iPhone application that shows the real time of creation and location of any picture.\nYou can save, share, print the picture with a timestamp."
+        )
+    }
+    
+    func showAboutUs() {
+        let githubLink = AlertOption(
+            title: "GitHub",
+            action: Command {
+                if let url = URL(string: Defines.API.gitHubUrl) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        )
+        
+        let cvLink = AlertOption(
+            title: "CV",
+            action: Command {
+                if let url = URL(string: Defines.API.cvUrl) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        )
+        
+        let close = AlertOption(
+            title: "Close",
+            action: .nop
+        )
+        
+        let options = [githubLink, cvLink, close]
+        navigationController?.showAlertWithOptions(
+            title: "About Creator",
+            message: "Created by Tetiana Nieizviestna.\nGo to GitHub to find my iOS apps portfolio, or click on CV to learn more about my experience in iOS applications development.",
+            options: options
         )
     }
 }
